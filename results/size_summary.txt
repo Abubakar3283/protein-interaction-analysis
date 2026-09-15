@@ -1,0 +1,5 @@
+Total proteins: 21840
+Min length: 12
+Max length: 32000
+Mean length: 537.82
+Median length: 391.00

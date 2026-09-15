@@ -1,0 +1,38 @@
+{
+  "total_proteins": 21840,
+  "min_length": 12,
+  "max_length": 32000,
+  "mean_length": 537.82,
+  "top_5_largest": [
+    {
+      "rank": 1,
+      "protein_id": "10090.ENSMUSP00000107477",
+      "preferred_name": "Ttn",
+      "protein_size": 32000
+    },
+    {
+      "rank": 2,
+      "protein_id": "10090.ENSMUSP00000147104",
+      "preferred_name": "Muc16",
+      "protein_size": 8478
+    },
+    {
+      "rank": 3,
+      "protein_id": "10090.ENSMUSP00000038264",
+      "preferred_name": "Obscn",
+      "protein_size": 8032
+    },
+    {
+      "rank": 4,
+      "protein_id": "10090.ENSMUSP00000138308",
+      "preferred_name": "Dst",
+      "protein_size": 7717
+    },
+    {
+      "rank": 5,
+      "protein_id": "10090.ENSMUSP00000095507",
+      "preferred_name": "Macf1",
+      "protein_size": 7355
+    }
+  ]
+}
