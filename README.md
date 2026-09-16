@@ -58,6 +58,7 @@ All processing is implemented in Python and executed inside the Conda environmen
 |---|---|---|
 | [`scripts/analyze_lengths.py`](scripts/analyze_lengths.py) | Parses the gzipped TSV; computes count, min/max/mean; reports the top-5 largest proteins; writes `results/protein_length_stats.json` | Standard library only |
 | [`scripts/plot_protein_distribution.py`](scripts/plot_protein_distribution.py) | Filters unannotated sizes; computes mean, median, std dev, quartiles; renders the histogram + KDE figure; writes `results/protein_length_distribution.png` | numpy, pandas, matplotlib |
+| [`scripts/map_string_ensembl.py`](scripts/map_string_ensembl.py) | Builds the STRING → Ensembl protein/gene correspondence table from `data/genes.gff3.gz` + the STRING TSV; writes `results/string_to_ensembl_mapping.tsv` (top 1,000 rows) and a 10-row sample | Standard library only |
 
 **Pipeline steps:**
 
@@ -133,13 +134,78 @@ The five largest proteins are all giant, multi-modular proteins whose biological
 
 ---
 
-## 7. Discussion
+## 7. 🧬 Protein-to-Gene Correspondence (STRING to Ensembl)
+
+The STRING file `data/10090.protein.info.v12.0.txt.gz` identifies every protein by its **STRING protein ID** (`10090.ENSMUSP00000000001`) together with a **preferred name** (`Gnai3`) — but it does not carry the gene association required for a biologist's correspondence table. That table is recovered here by merging STRING with the Ensembl gene-annotation track `data/genes.gff3.gz`, yielding a clean four-column correspondence: **STRING Protein ID → Ensembl Protein ID → Ensembl Gene ID → Protein Name**.
+
+### 7.1 GFF3 parsing logic
+
+Ensembl GFF3 encodes each gene model as a nested feature hierarchy. In column 9 (**attributes**), every feature points to its parent, so a protein can be walked up to its gene:
+
+```
+gene:ENSMUSG00000000001                          # feature type: gene
+└── transcript:ENSMUST00000000001                # feature type: mRNA
+    └── CDS:ENSMUSP00000000001                   # feature type: CDS
+```
+
+The script `scripts/map_string_ensembl.py` implements this in a single pass over the gzipped file:
+
+1. **Transcript → gene.** Every `transcript`-like feature (`transcript`, `mRNA`, `lnc_RNA`, `pseudogenic_transcript`, `unconfirmed_transcript`) carries `transcript_id=ENSMUST...` (or `ID=transcript:...`) and `Parent=gene:ENSMUSG...`; these fill the transcript → gene dictionary (142,819 transcripts resolved).
+2. **Protein → transcript.** Every `CDS` feature carries `protein_id=ENSMUSP...` and `Parent=transcript:ENSMUST...`; these fill the protein → transcript dictionary.
+3. **Chain.** The protein → gene map is obtained by composition (CDS → parent transcript → parent gene), yielding 66,153 unique proteins mapped.
+
+> **Note.** A protein appears on **many** CDS lines (one per exon), so the `protein_id` → gene association is assembled once per unique protein; multiple transcript isoforms of a gene therefore collapse onto the same gene.
+
+### 7.2 Merge with STRING and output
+
+The STRING protein ID is prefixed by the NCBI taxonomy ID (`10090.`); stripping this prefix yields the Ensembl protein ID used as the join key. The `preferred_name` column becomes `Protein_Name`.
+
+| Step | Detail |
+|---|---|
+| STRING records parsed | 21,840 |
+| Joined to an Ensembl gene | **21,318 (97.6%)** |
+| Not joined | 522 — STRING entries not represented by a CDS in this GFF3 (non-coding/pseudogene annotations or IDs retired between releases) |
+
+The merged table is written with the four columns `STRING_Protein_ID`, `Ensembl_Protein_ID`, `Ensembl_Gene_ID`, `Protein_Name`:
+
+- `results/string_to_ensembl_mapping.tsv` — **top 1,000 rows** (TSV, header included)
+- `results/string_to_ensembl_mapping_sample.tsv` — 10-row sample used in this README
+
+### 7.3 Sample correspondence table
+
+| STRING Protein ID | Ensembl Protein ID | Ensembl Gene ID | Protein Name |
+|---|---|---|---|
+| `10090.ENSMUSP00000000001` | `ENSMUSP00000000001` | `ENSMUSG00000000001` | Gnai3 |
+| `10090.ENSMUSP00000000003` | `ENSMUSP00000000003` | `ENSMUSG00000000003` | Pbsn |
+| `10090.ENSMUSP00000000010` | `ENSMUSP00000000010` | `ENSMUSG00000020875` | Hoxb9 |
+| `10090.ENSMUSP00000000028` | `ENSMUSP00000000028` | `ENSMUSG00000000028` | Cdc45 |
+| `10090.ENSMUSP00000000049` | `ENSMUSP00000000049` | `ENSMUSG00000000049` | Apoh |
+| `10090.ENSMUSP00000000058` | `ENSMUSP00000000058` | `ENSMUSG00000000058` | Cav2 |
+| `10090.ENSMUSP00000000080` | `ENSMUSP00000000080` | `ENSMUSG00000000078` | Klf6 |
+| `10090.ENSMUSP00000000090` | `ENSMUSP00000000090` | `ENSMUSG00000000088` | Cox5a |
+| `10090.ENSMUSP00000000095` | `ENSMUSP00000000095` | `ENSMUSG00000000093` | Tbx2 |
+| `10090.ENSMUSP00000000122` | `ENSMUSP00000000122` | `ENSMUSG00000000120` | Ngfr |
+
+### 7.4 How to run
+
+The script uses only the Python standard library (plus the two gzipped data files).
+
+```bash
+conda activate bio_project
+python scripts/map_string_ensembl.py
+```
+
+Run from the repository root. The script reads `data/`, writes `results/string_to_ensembl_mapping.tsv` and `results/string_to_ensembl_mapping_sample.tsv`, prints coverage statistics and the sample table to the console.
+
+---
+
+## 8. Discussion
 
 The quantile structure of the mouse proteome — median 391 aa, Q1/Q3 = 255/646 aa — aligns with the expectation that most proteins are single-domain or small multi-domain polypeptides, and that protein length is geometrically (multiplicatively) constrained during evolution. The heavy right tail is populated not by pathological artifacts but by a functionally coherent class of **giant scaffolding proteins** (titin, obscurin, dystonin, MACF1, mucins), for which extended structure is the mechanism of action. The mouse distribution is characteristic of mammalian proteomes and offers a natural baseline for comparisons against the human proteome, other vertebrate lineages, and disease-associated length-altering variants (e.g., titin truncations in cardiomyopathy).
 
 ---
 
-## 8. Reproducibility Guide (Conda environment `bio_project`)
+## 9. Reproducibility Guide (Conda environment `bio_project`)
 
 The entire analysis is reproducible in a clean environment in under two minutes. All commands assume a POSIX shell and a working Conda/Miniconda installation.
 
@@ -240,7 +306,7 @@ Plot saved to   : results/protein_length_distribution.png
 
 ---
 
-## 9. Repository Structure
+## 10. Repository Structure
 
 ```
 project-practice/
@@ -249,11 +315,14 @@ project-practice/
 ├── scripts/
 │   ├── analyze_lengths.py                   # JSON summary + top-5 report
 │   ├── plot_protein_distribution.py         # Statistics + histogram/KDE figure
+│   ├── map_string_ensembl.py                # STRING → Ensembl protein/gene mapping
 │   ├── extract_info.py                      # Utility: TSV → CSV sample
 │   └── parse_proteins.py                    # Utility: record parser
 ├── results/
 │   ├── protein_length_stats.json            # Machine-readable summary
 │   ├── protein_length_distribution.png      # Publication figure (300 dpi)
+│   ├── string_to_ensembl_mapping.tsv        # STRING→Ensembl correspondence (top 1,000)
+│   ├── string_to_ensembl_mapping_sample.tsv # 10-row sample for the README
 │   ├── size_summary.txt                     # Legacy text summary
 │   └── protein_info_sample.csv              # Sample excerpt of the data
 └── README.md
@@ -261,14 +330,14 @@ project-practice/
 
 ---
 
-## 10. Data Availability
+## 11. Data Availability
 
 - **Primary data:** STRING database release 12.0 — `https://string-db.org` (file `10090.protein.info.v12.0.txt.gz`, taxonomy ID 10090).
-- **Derived artifacts:** `results/protein_length_stats.json` and `results/protein_length_distribution.png` are regenerated by the scripts and can be reproduced exactly with the protocol in [Section 8](#8-reproducibility-guide-conda-environment-bio_project).
+- **Derived artifacts:** `results/protein_length_stats.json`, `results/protein_length_distribution.png`, and `results/string_to_ensembl_mapping.tsv` are regenerated by the scripts and can be reproduced exactly with the protocol in [Section 9](#9-reproducibility-guide-conda-environment-bio_project).
 
 ---
 
-## 11. References
+## 12. References
 
 1. **Szklarczyk D, Kirsch R, Koutrouli M, et al.** The STRING database in 2023: genes under the control of their regulatory elements. *Nucleic Acids Research*. 2023;51(D1):D670–D676. doi:10.1093/nar/gkac1000
 2. **Labeit S, Kolmerer B.** Titins: giant proteins in charge of muscle ultrastructure and elasticity. *Science*. 1995;270(5234):293–296. doi:10.1126/science.270.5234.293
