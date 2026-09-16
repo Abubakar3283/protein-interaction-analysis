@@ -35,7 +35,7 @@ The laboratory mouse (*Mus musculus*) is the principal mammalian model organism 
 | **File format** | Tab-separated values (TSV), gzip-compressed, UTF-8 |
 | **Source URL** | https://string-db.org (download portal: `https://string-db.org/cgi/download`) |
 | **Records** | 21,840 protein entries |
-| **License / citation** | Academic use; cite Szklarczyk et al., Nucleic Acids Research, 2023 (see [References](#11-references)) |
+| **License / citation** | Academic use; cite Szklarczyk et al., Nucleic Acids Research, 2023 (see [References](#13-references)) |
 
 ### 2.1 Data Schema
 
@@ -199,13 +199,57 @@ Run from the repository root. The script reads `data/`, writes `results/string_t
 
 ---
 
-## 8. Discussion
+## 8. 🔗 High-Confidence Protein-Protein Interactions (PPI)
+
+Beyond the protein catalogue analysed above, STRING v12.0 ships the genome-scale interaction network for *M. musculus*: `data/10090.protein.links.v12.0.txt.gz` holds **12,684,354** scored pairwise edges spanning all 21,840 proteins. Every edge carries a `combined_score` (0–1,000) that integrates seven evidence channels — genomic neighbourhood, gene fusion, phylogenetic co-occurrence, co-expression, experimental data, curated databases, and textmining. This step narrows the network to its most trustworthy slice, **interactions with `combined_score ≥ 900`** (STRING's "highest confidence" band), and annotates both partners of every retained interaction with their gene symbols using the correspondence table built in [Section 7](#7-protein-to-gene-correspondence-string-to-ensembl).
+
+### 8.1 Filtering and annotation logic
+
+1. **Stream & filter.** The gzipped links file is streamed row by row (standard library only) and every row with `combined_score < 900` is discarded. The STRING IDs in this file already carry the `10090.` taxon prefix, so each endpoint joins to the correspondence table directly, with no ID normalization.
+2. **Annotate (inner join).** Each high-confidence edge is resolved against `results/string_to_ensembl_mapping.tsv`: *both* `protein1` and `protein2` must appear in the table, and each partner is annotated with its gene symbol (`Protein_Name`) and Ensembl gene ID. The inner join guarantees that every row of the output is fully interpretable.
+3. **Rank & write.** The fully annotated interactions are ranked by `combined_score` (descending, ties broken by protein ID order) and the top 1,000 are written to `results/high_confidence_interactions.tsv`.
+
+### 8.2 Statistics
+
+| Metric | Value |
+|---|---:|
+| Total edges in the STRING v12.0 mouse network | 12,684,354 |
+| **High-confidence edges (`combined_score ≥ 900`)** | **150,148 (1.18%)** |
+| With *both* partners resolved to a gene symbol | 1,006 |
+| Interactions written to `high_confidence_interactions.tsv` | 1,000 |
+
+The band is dominated by the strongest evidence STRING can assign: the modal score within it is 999 (the maximum present in this file, 15,592 edges), and the saved interactions span `combined_score` from 999 down to 900.
+
+### 8.3 Top 5 high-confidence interactions (preview)
+
+| Protein 1 (STRING ID) | Protein 2 (STRING ID) | Combined Score | Protein 1 Name | Protein 2 Name |
+|---|---|---:|---|---|
+| `10090.ENSMUSP00000000028` | `10090.ENSMUSP00000000505` | 999 | Cdc45 | Mcm7 |
+| `10090.ENSMUSP00000000058` | `10090.ENSMUSP00000007799` | 999 | Cav2 | Cav1 |
+| `10090.ENSMUSP00000000175` | `10090.ENSMUSP00000010007` | 999 | Sdhd | Sdhb |
+| `10090.ENSMUSP00000000188` | `10090.ENSMUSP00000006911` | 999 | Ccnd2 | Cdk4 |
+| `10090.ENSMUSP00000000299` | `10090.ENSMUSP00000001055` | 999 | Itgb2 | Icam2 |
+
+### 8.4 How to run
+
+The script uses only the Python standard library.
+
+```bash
+conda activate bio_project
+python scripts/filter_interactions.py
+```
+
+Run from the repository root. The script reads `data/10090.protein.links.v12.0.txt.gz` and `results/string_to_ensembl_mapping.tsv`, writes `results/high_confidence_interactions.tsv`, and prints the network-wide statistics and the 5-row sample table to the console.
+
+---
+
+## 9. Discussion
 
 The quantile structure of the mouse proteome — median 391 aa, Q1/Q3 = 255/646 aa — aligns with the expectation that most proteins are single-domain or small multi-domain polypeptides, and that protein length is geometrically (multiplicatively) constrained during evolution. The heavy right tail is populated not by pathological artifacts but by a functionally coherent class of **giant scaffolding proteins** (titin, obscurin, dystonin, MACF1, mucins), for which extended structure is the mechanism of action. The mouse distribution is characteristic of mammalian proteomes and offers a natural baseline for comparisons against the human proteome, other vertebrate lineages, and disease-associated length-altering variants (e.g., titin truncations in cardiomyopathy).
 
 ---
 
-## 9. Reproducibility Guide (Conda environment `bio_project`)
+## 10. Reproducibility Guide (Conda environment `bio_project`)
 
 The entire analysis is reproducible in a clean environment in under two minutes. All commands assume a POSIX shell and a working Conda/Miniconda installation.
 
@@ -306,7 +350,7 @@ Plot saved to   : results/protein_length_distribution.png
 
 ---
 
-## 10. Repository Structure
+## 11. Repository Structure
 
 ```
 project-practice/
@@ -330,14 +374,14 @@ project-practice/
 
 ---
 
-## 11. Data Availability
+## 12. Data Availability
 
 - **Primary data:** STRING database release 12.0 — `https://string-db.org` (file `10090.protein.info.v12.0.txt.gz`, taxonomy ID 10090).
-- **Derived artifacts:** `results/protein_length_stats.json`, `results/protein_length_distribution.png`, and `results/string_to_ensembl_mapping.tsv` are regenerated by the scripts and can be reproduced exactly with the protocol in [Section 9](#9-reproducibility-guide-conda-environment-bio_project).
+- **Derived artifacts:** `results/protein_length_stats.json`, `results/protein_length_distribution.png`, and `results/string_to_ensembl_mapping.tsv` are regenerated by the scripts and can be reproduced exactly with the protocol in [Section 10](#10-reproducibility-guide-conda-environment-bio_project).
 
 ---
 
-## 12. References
+## 13. References
 
 1. **Szklarczyk D, Kirsch R, Koutrouli M, et al.** The STRING database in 2023: genes under the control of their regulatory elements. *Nucleic Acids Research*. 2023;51(D1):D670–D676. doi:10.1093/nar/gkac1000
 2. **Labeit S, Kolmerer B.** Titins: giant proteins in charge of muscle ultrastructure and elasticity. *Science*. 1995;270(5234):293–296. doi:10.1126/science.270.5234.293
