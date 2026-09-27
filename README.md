@@ -93,11 +93,3 @@ The parsing logic in `scripts/map_string_ensembl.py` connects the genomic coordi
                                        ▼
                        [ Final Correspondence Table ]
                      (21,318 matched proteins: 97.6%)
----
-
-
-## 4. Reproducibility Instructions
-
-To reproduce the correspondence table:
-conda activate bio_project
-python scripts/map_string_ensembl.py
