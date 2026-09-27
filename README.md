@@ -70,6 +70,29 @@ The script scripts/map_string_ensembl.py executes a two-step lookup:
 
 Full mapping is saved in results/string_to_ensembl_mapping.tsv.
 
+## 3. Correspondence Table (STRING to Ensembl)
+
+### 3.1 Pipeline Architecture (How We Did It)
+
+The parsing logic in `scripts/map_string_ensembl.py` connects the genomic coordinate layer to the protein interaction space via a two-step hierarchical resolution:
+
+```text
+[ genes.gff3.gz ]                                [ 10090.protein.info.v12.0.txt.gz ]
+       │                                                          │
+       ▼                                                          ▼
+1. CDS points to Parent Transcript               1. Strip "10090." Taxon prefix
+   (ENSMUSP... -> ENSMUST...)                       (10090.ENSMUSP... -> ENSMUSP...)
+       │                                                          │
+       ▼                                                          │
+2. Transcript points to Parent Gene                               │
+   (ENSMUST... -> ENSMUSG...)                                     │
+       │                                                          │
+       ▼                                                          ▼
+  [ CDS -> Gene Dictionary ] ──────── Inner Join ──────── [ Ensembl Protein ID Key ]
+                                       │
+                                       ▼
+                       [ Final Correspondence Table ]
+                     (21,318 matched proteins: 97.6%)
 ---
 
 ## 4. Reproducibility Instructions
