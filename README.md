@@ -72,7 +72,7 @@ Full mapping is saved in results/string_to_ensembl_mapping.tsv.
 
 ## 3. Correspondence Table (STRING to Ensembl)
 
-### 3.1 Pipeline Architecture (How We Did It)
+### 3.1 Pipeline Architecture
 
 The parsing logic in `scripts/map_string_ensembl.py` connects the genomic coordinate layer to the protein interaction space via a two-step hierarchical resolution:
 
@@ -94,6 +94,7 @@ The parsing logic in `scripts/map_string_ensembl.py` connects the genomic coordi
                        [ Final Correspondence Table ]
                      (21,318 matched proteins: 97.6%)
 ---
+
 
 ## 4. Reproducibility Instructions
 
