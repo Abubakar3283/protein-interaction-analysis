@@ -215,6 +215,7 @@ Quantifying feature types (Column 3) reveals the structural composition of the *
 Extracting unique entries from Column 1 (`seqid`) classifies genomic reference sequences into physical chromosomes versus unplaced assembly contigs:
 ```bash
 cut -f 1 data/genes.gff3 | sort -u
+```
 
 ### 2. Chromosomal Architecture & Diversity Classification
 
