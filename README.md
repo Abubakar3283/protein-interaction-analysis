@@ -70,3 +70,29 @@ $$\text{Final Score} = S_{\text{combined}} \times 1000$$
 
 * Highest Confidence: $\ge 900$
 * Medium Confidence: $\ge 400$
+
+---
+
+## Task 97: Transcript Coordinates to Protein and Gene Mapping
+
+### 1. Objective
+Map each transcript model to its physical genomic coordinates (chromosome, start, end, strand) and link it to its translated protein product ID and parent gene ID.
+
+### 2. Biological Importance
+Genomic variants identified in sequencing pipelines are reported as chromosomal coordinates (e.g., `chr1:3284705-3741721`). This coordinate mapping table enables direct cross-referencing between DNA coordinates, transcript isoforms, and functional protein products.
+
+### 3. Implementation (`scripts/map_transcripts_coords.py`)
+* Extracted coordinates (`seqid`, `start`, `end`, `strand`) and transcript IDs from `mRNA`/`transcript` lines in `data/genes.gff3`.
+* Extracted `protein_id` and parent transcript associations from `CDS` records.
+* Joined coordinates, proteins, and parent genes into `results/transcript_coordinates_mapping.tsv`.
+
+### 4. Sample Mapping Output
+Sample entries from `results/transcript_coordinates_mapping_sample.tsv`:
+
+| Chromosome | Start | End | Strand | Transcript_ID | Protein_ID | Ensembl_Gene_ID | Gene_Name |
+| :---: | :---: | :---: | :---: | :--- | :--- | :--- | :--- |
+| 1 | 3284705 | 3741721 | - | ENSMUST00000070533 | ENSMUSP00000070648 | ENSMUSG00000051951 | Xkr4-201 |
+| 1 | 4069780 | 4479464 | - | ENSMUST00000208660 | NA | ENSMUSG00000025900 | Rp1-202 |
+| 1 | 4414369 | 4430537 | - | ENSMUST00000027032 | ENSMUSP00000027032 | ENSMUSG00000025900 | Rp1-201 |
+
+*(Note: Transcripts with `Protein_ID = NA` represent non-coding or non-translated isoforms).*
