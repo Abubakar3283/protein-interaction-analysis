@@ -14,7 +14,7 @@ The project integrates reference genomic annotations from **Ensembl** (release G
 | **96** | STRING to Ensembl Correspondence | Build a 5-tier mapping: STRING ID $\leftrightarrow$ Protein $\leftrightarrow$ Transcript $\leftrightarrow$ Gene $\leftrightarrow$ Symbol | **Completed** |
 | **97** | Genomic Coordinates Mapping | Map transcript coordinates (`chr`, `start`, `end`, `strand`) to proteins and genes | **Completed** |
 | **98** | Data Schema Summary | Formal documentation of file formats, column types, and attribute layouts | **Completed** |
-| **99** | STRING Confidence Scoring | Mathematical and biological breakdown of the 7-channel probabilistic scoring | *Pending Documentation* |
+| **99** | STRING Confidence Scoring | Mathematical and biological breakdown of the 7-channel probabilistic scoring | **Completed** |
 | **100** | Molecular Type Census | Quantitative distribution of GFF3 Sequence Ontology types (exons, CDS, mRNAs, etc.) | *Pending Documentation* |
 | **101** | Chromosomal & Scaffold Diversity | Unique counts and classification of canonical chromosomes vs. unplaced contigs | *Pending Documentation* |
 
@@ -137,3 +137,34 @@ A data schema formalizes the technical specification of the datasets used across
 | **Col 1** | `protein1` | String | Taxonomy-prefixed | STRING identifier of the first interacting protein (e.g., `10090.ENSMUSP00000000001`). |
 | **Col 2** | `protein2` | String | Taxonomy-prefixed | STRING identifier of the second interacting protein partner. |
 | **Col 3** | `combined_score`| Integer | $150 \dots 1000$ | Integrated confidence metric derived probabilistically from multiple biological evidence channels. |
+
+---
+
+## Task 99: STRING Confidence Scoring Methodology
+
+### 1. Conceptual Framework
+STRING functional association scores represent an estimate of probability that at least one biological interaction exists between two proteins. These scores range from $0$ to $1000$ (representing probabilities scaled by $1000$).
+
+### 2. The 7 Biological Evidence Channels
+STRING derives functional scores by querying 7 independent biological channels:
+1. **Experiments:** Direct biochemical evidence (e.g., Co-IP, Yeast Two-Hybrid, tandem affinity purification).
+2. **Databases:** Manually curated pathway knowledge from established repositories (KEGG, Reactome, BioCyc).
+3. **Text-mining:** Natural language processing of scientific abstracts (PubMed) quantifying joint co-mentions.
+4. **Co-expression:** Correlated gene expression across varied microarray and RNA-seq experimental conditions.
+5. **Neighborhood:** Genomic proximity of gene pairs across multiple bacterial and eukaryotic genomes.
+6. **Gene Fusion:** Orthologous gene pairs fused into a single polypeptide chain in other evolutionary lineages.
+7. **Co-occurrence:** Phylogenetic profiling tracking simultaneous presence or absence across taxonomic clades.
+
+### 3. Mathematical Integration Model
+Each channel calculates an individual confidence score $S_i \in [0, 1]$ corrected against random background expectations. Assuming the evidence sources provide independent observations, individual error probabilities $(1 - S_i)$ are combined:
+
+$$S_{\text{combined}} = 1 - \prod_{i=1}^{7} (1 - S_i)$$
+
+The integrated score is then scaled to an integer range:
+$$\text{Score}_{\text{final}} = \text{round}(S_{\text{combined}} \times 1000)$$
+
+### 4. Standard Operational Thresholds
+* **Highest Confidence ($\ge 900$):** Used for strict interactome topological analyses to eliminate false-positive edges.
+* **High Confidence ($\ge 700$):** High-reliability interactions.
+* **Medium Confidence ($\ge 400$):** Default STRING threshold balancing sensitivity and specificity.
+* **Low Confidence ($\ge 150$):** Broad exploratory discovery.
