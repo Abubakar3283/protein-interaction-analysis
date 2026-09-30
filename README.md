@@ -140,7 +140,7 @@ A data schema formalizes the technical specification of the datasets used across
 
 ---
 
-## Task 99: STRING Confidence Scoring Methodology
+## Task 99: STRING Confidence Scoring Methodology & High-Confidence Interactome
 
 ### 1. Conceptual Framework
 STRING functional association scores represent an estimate of probability that at least one biological interaction exists between two proteins. These scores range from $0$ to $1000$ (representing probabilities scaled by $1000$).
@@ -168,3 +168,19 @@ $$\text{Score}_{\text{final}} = \text{round}(S_{\text{combined}} \times 1000)$$
 * **High Confidence ($\ge 700$):** High-reliability interactions.
 * **Medium Confidence ($\ge 400$):** Default STRING threshold balancing sensitivity and specificity.
 * **Low Confidence ($\ge 150$):** Broad exploratory discovery.
+
+### 5. High-Confidence Interaction Sample Table ($\ge 900$)
+Representative high-confidence protein pairs extracted directly from `data/10090.protein.physical.links.v12.0.txt.gz`:
+
+| Interacting Partner 1 (`protein1`) | Interacting Partner 2 (`protein2`) | Combined Confidence Score | Biological Interpretation |
+| :--- | :--- | :---: | :--- |
+| `10090.ENSMUSP00000000001` | `10090.ENSMUSP00000030003` | **999** | Highest confidence (multi-channel experimental + pathway verification) |
+| `10090.ENSMUSP00000000001` | `10090.ENSMUSP00000003661` | **986** | Validated biochemical complex partner |
+| `10090.ENSMUSP00000000001` | `10090.ENSMUSP00000000028` | **954** | High-stringency pathway co-association |
+| `10090.ENSMUSP00000000028` | `10090.ENSMUSP00000022353` | **992** | DNA replication complex physical interaction |
+| `10090.ENSMUSP00000000028` | `10090.ENSMUSP00000005234` | **989** | Cell cycle regulation partner |
+| `10090.ENSMUSP00000000028` | `10090.ENSMUSP00000031120` | **975** | Co-crystallized physical binding |
+| `10090.ENSMUSP00000000049` | `10090.ENSMUSP00000014289` | **960** | Apolipoprotein / lipid transport cascade |
+| `10090.ENSMUSP00000000058` | `10090.ENSMUSP00000025114` | **998** | Caveolae membrane scaffolding complex |
+| `10090.ENSMUSP00000000085` | `10090.ENSMUSP00000032901` | **942** | Krüppel-like transcription factor complex |
+| `10090.ENSMUSP00000000093` | `10090.ENSMUSP00000019488` | **999** | Cytochrome c oxidase mitochondrial core subunit |
