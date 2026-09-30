@@ -1,4 +1,4 @@
-# Comprehensive Mouse Genomic & Interactome Analysis Pipeline
+markdown_text = """# Comprehensive Mouse Genomic & Interactome Analysis Pipeline
 
 This repository hosts computational genomics and network biology pipelines for *Mus musculus* (Taxon ID: `10090`) developed under the supervision of **Professor Ping-Han Hsieh**.
 
@@ -11,12 +11,12 @@ The project integrates reference genomic annotations from **Ensembl** (release G
 | Task ID | Deliverable Scope | Biological & Computational Objective | Status |
 | :---: | :--- | :--- | :---: |
 | **95** | GFF3 9-Column Specification | Verify and parse genomic annotation coordinates and hierarchical relationships | **Completed** |
-| **96** | STRING to Ensembl Correspondence | Build a 5-tier mapping: STRING ID $\leftrightarrow$ Protein $\leftrightarrow$ Transcript $\leftrightarrow$ Gene $\leftrightarrow$ Symbol | **Completed** |
+| **96** | STRING to Ensembl Correspondence | Build a 5-tier mapping: STRING ID <-> Protein <-> Transcript <-> Gene <-> Symbol | **Completed** |
 | **97** | Genomic Coordinates Mapping | Map transcript coordinates (`chr`, `start`, `end`, `strand`) to proteins and genes | **Completed** |
 | **98** | Data Schema Summary | Formal documentation of file formats, column types, and attribute layouts | **Completed** |
 | **99** | STRING Confidence Scoring | Mathematical and biological breakdown of the 7-channel probabilistic scoring | **Completed** |
 | **100** | Molecular Type Census | Quantitative distribution of GFF3 Sequence Ontology types (exons, CDS, mRNAs, etc.) | **Completed** |
-| **101** | Chromosomal & Scaffold Diversity | Unique counts and classification of canonical chromosomes vs. unplaced contigs | *Pending Documentation* |
+| **101** | Chromosomal & Scaffold Diversity | Unique counts and classification of canonical chromosomes vs. unplaced contigs | **Completed** |
 
 ---
 
@@ -50,7 +50,7 @@ The Generic Feature Format version 3 (GFF3) serves as the spatial index for the 
 
 ### 1. Objective & Methodological Pipeline
 Biological databases identify entities through distinct identifiers. This task bridges the STRING interactome with the Ensembl genomic assembly through the script `scripts/map_string_ensembl.py`:
-$$\text{STRING Protein ID} \longleftrightarrow \text{Ensembl Protein ID} \longleftrightarrow \text{Ensembl Transcript ID} \longleftrightarrow \text{Ensembl Gene ID} \longleftrightarrow \text{Official Gene Symbol}$$
+$$\\text{STRING Protein ID} \\longleftrightarrow \\text{Ensembl Protein ID} \\longleftrightarrow \\text{Ensembl Transcript ID} \\longleftrightarrow \\text{Ensembl Gene ID} \\longleftrightarrow \\text{Official Gene Symbol}$$
 
 1. Extracted `transcript:Parent` from each `CDS` record and `gene:Parent` from each `mRNA` record in `data/genes.gff3`.
 2. Stripped the species prefix (`10090.`) from the STRING identifiers.
@@ -136,7 +136,7 @@ A data schema formalizes the technical specification of the datasets used across
 | :---: | :--- | :---: | :---: | :--- |
 | **Col 1** | `protein1` | String | Taxonomy-prefixed | STRING identifier of the first interacting protein (e.g., `10090.ENSMUSP00000000001`). |
 | **Col 2** | `protein2` | String | Taxonomy-prefixed | STRING identifier of the second interacting protein partner. |
-| **Col 3** | `combined_score`| Integer | $150 \dots 1000$ | Integrated confidence metric derived probabilistically from multiple biological evidence channels. |
+| **Col 3** | `combined_score`| Integer | $150 \\dots 1000$ | Integrated confidence metric derived probabilistically from multiple biological evidence channels. |
 
 ---
 
@@ -156,20 +156,20 @@ STRING derives functional scores by querying 7 independent biological channels:
 7. **Co-occurrence:** Phylogenetic profiling tracking simultaneous presence or absence across taxonomic clades.
 
 ### 3. Mathematical Integration Model
-Each channel calculates an individual confidence score $S_i \in [0, 1]$ corrected against random background expectations. Assuming the evidence sources provide independent observations, individual error probabilities $(1 - S_i)$ are combined:
+Each channel calculates an individual confidence score $S_i \\in [0, 1]$ corrected against random background expectations. Assuming the evidence sources provide independent observations, individual error probabilities $(1 - S_i)$ are combined:
 
-$$S_{\text{combined}} = 1 - \prod_{i=1}^{7} (1 - S_i)$$
+$$S_{\\text{combined}} = 1 - \\prod_{i=1}^{7} (1 - S_i)$$
 
 The integrated score is then scaled to an integer range:
-$$\text{Score}_{\text{final}} = \text{round}(S_{\text{combined}} \times 1000)$$
+$$\\text{Score}_{\\text{final}} = \\text{round}(S_{\\text{combined}} \\times 1000)$$
 
 ### 4. Standard Operational Thresholds
-* **Highest Confidence ($\ge 900$):** Used for strict interactome topological analyses to eliminate false-positive edges.
-* **High Confidence ($\ge 700$):** High-reliability interactions.
-* **Medium Confidence ($\ge 400$):** Default STRING threshold balancing sensitivity and specificity.
-* **Low Confidence ($\ge 150$):** Broad exploratory discovery.
+* **Highest Confidence (>= 900):** Used for strict interactome topological analyses to eliminate false-positive edges.
+* **High Confidence (>= 700):** High-reliability interactions.
+* **Medium Confidence (>= 400):** Default STRING threshold balancing sensitivity and specificity.
+* **Low Confidence (>= 150):** Broad exploratory discovery.
 
-### 5. High-Confidence Interaction Sample Table ($\ge 900$)
+### 5. High-Confidence Interaction Sample Table (>= 900)
 Representative high-confidence protein pairs extracted directly from `data/10090.protein.physical.links.v12.0.txt.gz`:
 
 | Interacting Partner 1 (`protein1`) | Interacting Partner 2 (`protein2`) | Combined Confidence Score | Biological Interpretation |
@@ -204,5 +204,14 @@ Quantifying feature types (Column 3) reveals the structural composition of the *
 | **`five_prime_UTR` / `three_prime_UTR`** | >100,000 | Untranslated regulatory regions flanking the coding sequences. |
 
 ### 3. Biological Insights
-* **Alternative Splicing Ratio:** $\frac{66,153 \text{ mRNAs}}{25,412 \text{ genes}} \approx \mathbf{2.60}$ transcripts per protein-coding locus. On average, each mouse gene yields 2 to 3 distinct transcript isoforms through exon skipping and alternative promoter usage.
+* **Alternative Splicing Ratio:** 66,153 mRNAs / 25,412 genes ~ 2.60 transcripts per protein-coding locus. On average, each mouse gene yields 2 to 3 distinct transcript isoforms through exon skipping and alternative promoter usage.
 * **Exon vs. CDS Divergence:** Exons significantly exceed CDS counts because non-coding RNAs (e.g., lncRNAs, snRNAs) and untranslated terminal regions (UTRs) contain exons that never undergo ribosomal translation.
+
+---
+
+## Task 101: Chromosomal & Scaffold Diversity in GFF3
+
+### 1. Objective & Methodological Pipeline
+Extracting unique entries from Column 1 (`seqid`) classifies genomic reference sequences into physical chromosomes versus unplaced assembly contigs:
+```bash
+cut -f 1 data/genes.gff3 | sort -u
