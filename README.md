@@ -1,26 +1,68 @@
-# Mouse Genomic & Interactome Analysis Pipeline
+# Comprehensive Mouse Genomic & Interactome Analysis Pipeline
 
-This repository documents the computational biology pipelines for *Mus musculus* (Taxon ID: 10090) developed under the supervision of **Professor Ping-Han Hsieh**.
+This repository hosts computational genomics and network biology pipelines for *Mus musculus* (Taxon ID: `10090`) developed under the supervision of **Professor Ping-Han Hsieh**.
+
+The project integrates reference genomic annotations from **Ensembl** (release GRCm39) with the interactome data from the **STRING Database** (v12.0) to construct verified multi-tier mapping tables and resolve physical genomic loci for downstream bioinformatics analysis.
+
+---
+
+## Project Task Dashboard
+
+| Task ID | Deliverable Scope | Biological & Computational Objective | Status |
+| :---: | :--- | :--- | :---: |
+| **95** | GFF3 9-Column Specification | Verify and parse genomic annotation coordinates and hierarchical relationships | **Completed** |
+| **96** | STRING to Ensembl Correspondence | Build a 5-tier mapping: STRING ID $\leftrightarrow$ Protein $\leftrightarrow$ Transcript $\leftrightarrow$ Gene $\leftrightarrow$ Symbol | **Completed** |
+| **97** | Genomic Coordinates Mapping | Map transcript coordinates (`chr`, `start`, `end`, `strand`) to proteins and genes | **Completed** |
+| **98** | Data Schema Summary | Formal documentation of file formats and attribute layouts | *Pending Documentation* |
+| **99** | STRING Confidence Scoring | Mathematical and biological breakdown of the 7-channel probabilistic scoring | *Pending Documentation* |
+| **100** | Molecular Type Census | Quantitative distribution of GFF3 Sequence Ontology types (exons, CDS, mRNAs, etc.) | *Pending Documentation* |
+| **101** | Chromosomal & Scaffold Diversity | Unique counts and classification of canonical chromosomes vs. unplaced contigs | *Pending Documentation* |
+
+---
+
+## Task 95: Understanding the GFF3 9-Column Format
+
+### 1. Concept & Biological Role
+The Generic Feature Format version 3 (GFF3) serves as the spatial index for the *Mus musculus* genome assembly. It defines coordinates, feature types, and parent-child parentage for every annotated segment on the reference chromosomes.
+
+### 2. Specification Table (The 9 Columns)
+
+| Column | Name | Description | Example Record |
+| :---: | :--- | :--- | :--- |
+| **1** | **Seqid** | Chromosome or unlocalized scaffold identifier | `1`, `X`, `GL456210.1` |
+| **2** | **Source** | Annotation pipeline or curated database authority | `ensembl_havana`, `havana` |
+| **3** | **Type** | Sequence Ontology molecular feature type | `gene`, `mRNA`, `CDS`, `exon` |
+| **4** | **Start** | 1-based start genomic coordinate (base pair) | `3284705` |
+| **5** | **End** | Inclusive end genomic coordinate (base pair) | `3741721` |
+| **6** | **Score** | Annotation confidence or alignment score (`.` if empty) | `.` |
+| **7** | **Strand** | Direction of transcription (`+` forward, `-` reverse) | `-` |
+| **8** | **Phase** | Reading frame offset for CDS features (`0`, `1`, `2`) | `.` or `0` |
+| **9** | **Attributes** | Semicolon-delimited key-value pairs defining metadata and ancestry | `ID=transcript:ENSMUST...;Parent=gene:...` |
+
+### 3. Biological Ancestry Hierarchy (The Central Dogma in GFF3)
+* **Gene (`gene`):** Top-level locus identifier (`ID=gene:ENSMUSG...`).
+* **Transcript (`mRNA`):** Spliced intermediate pointing to its parent gene (`ID=transcript:ENSMUST...; Parent=gene:ENSMUSG...`).
+* **Coding Sequence (`CDS`):** Polypeptide coding region pointing to its parent transcript (`protein_id=ENSMUSP...; Parent=transcript:ENSMUST...`).
 
 ---
 
 ## Task 96: Multi-tier Correspondence Mapping (STRING to Ensembl)
 
-### 1. Objective & Biological Context
-Bridge the interactome with the reference genome by creating a unified 5-tier mapping:
+### 1. Objective & Methodological Pipeline
+Biological databases identify entities through distinct identifiers. This task bridges the STRING interactome with the Ensembl genomic assembly through the script `scripts/map_string_ensembl.py`:
 $$\text{STRING Protein ID} \longleftrightarrow \text{Ensembl Protein ID} \longleftrightarrow \text{Ensembl Transcript ID} \longleftrightarrow \text{Ensembl Gene ID} \longleftrightarrow \text{Official Gene Symbol}$$
 
-### 2. Methodological Pipeline (`scripts/map_string_ensembl.py`)
-1. Extracted `transcript:Parent` from `CDS` features and `gene:Parent` from `mRNA` features in `data/genes.gff3`.
-2. Normalized STRING accessions by removing the species prefix (`10090.`).
-3. Linked each protein directly to its transcript and gene locus, outputting the final resolved table to `results/string_to_ensembl_mapping.tsv`.
+1. Extracted `transcript:Parent` from each `CDS` record and `gene:Parent` from each `mRNA` record in `data/genes.gff3`.
+2. Stripped the species prefix (`10090.`) from the STRING identifiers.
+3. Linked every protein to its corresponding transcript, gene, and gene symbol, saving the full result to `results/string_to_ensembl_mapping.tsv`.
 
-### 3. Mapping Coverage & Verification Statistics
-* **Total STRING Mouse Proteins:** 21,840
-* **Successfully Resolved to Gene & Transcript:** 21,318
-* **Overall Coverage:** **97.6%**
+### 2. Mapping Statistics
+* **Total Mouse Proteins in STRING:** 21,840
+* **Successfully Resolved:** 21,318
+* **Overall Mapping Coverage:** **97.6%**
 
-### 4. Sample Correspondence Table (10 Representative Rows)
+### 3. Sample Output Table (10 Representative Rows)
+Verified from `results/string_to_ensembl_mapping_sample.tsv`:
 
 | STRING_Protein_ID | Ensembl_Protein_ID | Ensembl_Transcript_ID | Ensembl_Gene_ID | Gene_Symbol |
 | :--- | :--- | :--- | :--- | :--- |
@@ -39,16 +81,16 @@ $$\text{STRING Protein ID} \longleftrightarrow \text{Ensembl Protein ID} \longle
 
 ## Task 97: Transcript Coordinates to Protein and Gene Mapping
 
-### 1. Objective & Biological Importance
-Map each transcript model to its physical genomic coordinates (chromosome, start, end, strand) and link it to its translated protein product ID and parent gene ID. This provides the physical spatial bridge between sequence-level mutations and protein products.
+### 1. Objective & Biological Rationale
+Experimental sequence variations (mutations, SNPs) are discovered at specific genomic coordinates. This workflow bridges genomic coordinates (`chr`, `start`, `end`, `strand`) directly with transcript isoforms and protein products via `scripts/map_transcripts_coords.py`.
 
-### 2. Methodological Pipeline (`scripts/map_transcripts_coords.py`)
-* Extracted coordinates (`seqid`, `start`, `end`, `strand`) and transcript IDs from `mRNA`/`transcript` lines in `data/genes.gff3`.
-* Extracted `protein_id` and parent transcript associations from `CDS` records.
-* Joined coordinates, proteins, and parent genes into `results/transcript_coordinates_mapping.tsv`.
+### 2. Methodological Pipeline
+* Extracted genomic boundaries and orientations (`seqid`, `start`, `end`, `strand`) for all transcripts in `data/genes.gff3`.
+* Integrated translated polypeptide accessions (`protein_id`) from corresponding `CDS` features.
+* Constructed a full lookup table stored in `results/transcript_coordinates_mapping.tsv`.
 
-### 3. Sample Mapping Output (10 Complete Rows)
-Verified directly from `results/transcript_coordinates_mapping_sample.tsv`:
+### 3. Sample Mapping Output (10 Representative Rows)
+Verified from `results/transcript_coordinates_mapping_sample.tsv`:
 
 | Chromosome | Start | End | Strand | Transcript_ID | Protein_ID | Ensembl_Gene_ID | Gene_Name |
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- | :--- |
@@ -63,4 +105,4 @@ Verified directly from `results/transcript_coordinates_mapping_sample.tsv`:
 | `1` | `4807892` | `4886770` | `+` | `ENSMUST00000027035` | `ENSMUSP00000027035` | `ENSMUSG00000025903` | `Mrpl15-201` |
 | `1` | `4807914` | `4832316` | `+` | `ENSMUST00000194883` | `NA` | `ENSMUSG00000025903` | `Mrpl15-203` |
 
-*(Note: Transcripts displaying `Protein_ID = NA` correspond to non-coding transcript isoforms or processed pseudogenic models lacking translated coding sequences).*
+*(Note: Transcripts with `Protein_ID = NA` represent non-coding or non-translated isoforms).*
