@@ -13,7 +13,7 @@ The project integrates reference genomic annotations from **Ensembl** (release G
 | **95** | GFF3 9-Column Specification | Verify and parse genomic annotation coordinates and hierarchical relationships | **Completed** |
 | **96** | STRING to Ensembl Correspondence | Build a 5-tier mapping: STRING ID $\leftrightarrow$ Protein $\leftrightarrow$ Transcript $\leftrightarrow$ Gene $\leftrightarrow$ Symbol | **Completed** |
 | **97** | Genomic Coordinates Mapping | Map transcript coordinates (`chr`, `start`, `end`, `strand`) to proteins and genes | **Completed** |
-| **98** | Data Schema Summary | Formal documentation of file formats and attribute layouts | *Pending Documentation* |
+| **98** | Data Schema Summary | Formal documentation of file formats, column types, and attribute layouts | **Completed** |
 | **99** | STRING Confidence Scoring | Mathematical and biological breakdown of the 7-channel probabilistic scoring | *Pending Documentation* |
 | **100** | Molecular Type Census | Quantitative distribution of GFF3 Sequence Ontology types (exons, CDS, mRNAs, etc.) | *Pending Documentation* |
 | **101** | Chromosomal & Scaffold Diversity | Unique counts and classification of canonical chromosomes vs. unplaced contigs | *Pending Documentation* |
@@ -106,3 +106,34 @@ Verified from `results/transcript_coordinates_mapping_sample.tsv`:
 | `1` | `4807914` | `4832316` | `+` | `ENSMUST00000194883` | `NA` | `ENSMUSG00000025903` | `Mrpl15-203` |
 
 *(Note: Transcripts with `Protein_ID = NA` represent non-coding or non-translated isoforms).*
+
+---
+
+## Task 98: Data Schema Summary
+
+### 1. Overview & Data Architecture
+A data schema formalizes the technical specification of the datasets used across our analytical pipelines. Defining data types, formats, constraints, and biological descriptions prevents programmatic errors and ensures cross-pipeline interoperability.
+
+### 2. Schema Specification: Ensembl GFF3 (`data/genes.gff3`)
+* **Format:** Tab-separated values (TSV), 9 fixed columns, 1-based coordinate indexing.
+
+| Column Index | Field Name | Data Type | Nullable | Biological & Functional Role |
+| :---: | :--- | :---: | :---: | :--- |
+| **Col 1** | `seqid` | String | No | Chromosomal identifier (e.g., `1`, `X`) or unplaced scaffold accession (`GL...`, `JH...`). |
+| **Col 2** | `source` | String | No | Annotation database or pipeline program (e.g., `ensembl_havana`). |
+| **Col 3** | `type` | String | No | Sequence Ontology feature classification (e.g., `gene`, `mRNA`, `CDS`, `exon`). |
+| **Col 4** | `start` | Integer | No | 1-based start coordinate of the biological feature on the forward strand. |
+| **Col 5** | `end` | Integer | No | 1-based inclusive end coordinate of the feature. |
+| **Col 6** | `score` | Float | Yes (`.`) | Sequence alignment or annotation confidence metric. |
+| **Col 7** | `strand` | Character | No | Orientation of transcription (`+` forward, `-` reverse, `.` unstranded). |
+| **Col 8** | `phase` | Integer | Yes (`.`) | Reading frame codon offset for CDS features (`0`, `1`, `2`). |
+| **Col 9** | `attributes` | Key-Value List | No | Semicolon-delimited metadata tags establishing feature ID and hierarchical ancestry (`ID=...;Parent=...`). |
+
+### 3. Schema Specification: STRING Physical Links (`data/10090.protein.physical.links...`)
+* **Format:** Space/Tab-delimited text, gzipped, 3 fixed columns.
+
+| Column Index | Field Name | Data Type | Value Range | Biological & Functional Role |
+| :---: | :--- | :---: | :---: | :--- |
+| **Col 1** | `protein1` | String | Taxonomy-prefixed | STRING identifier of the first interacting protein (e.g., `10090.ENSMUSP00000000001`). |
+| **Col 2** | `protein2` | String | Taxonomy-prefixed | STRING identifier of the second interacting protein partner. |
+| **Col 3** | `combined_score`| Integer | $150 \dots 1000$ | Integrated confidence metric derived probabilistically from multiple biological evidence channels. |
