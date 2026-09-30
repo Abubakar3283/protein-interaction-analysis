@@ -1,95 +1,72 @@
-# Mouse Proteome Correspondence & Annotation Analysis
+# Mouse Genomic & Interactome Analysis (Tasks 95 - 101)
 
-**Organism:** *Mus musculus* (House mouse, NCBI Taxonomy ID: 10090)  
-**Data Sources:** Ensembl Genome Browser (genes.gff3.gz) & STRING Database v12.0 (10090.protein.info.v12.0.txt.gz)  
-**Environment:** Python 3.12 (bio_project)
+This repository contains the analysis and data integration pipelines for *Mus musculus* (Taxon ID: 10090) developed under the supervision of **Professor Ping-Han Hsieh**.
 
 ---
 
-## 1. Project Objective
+## 1. Summary of Completed Tasks
 
-The primary objective of this project is to construct a verified Correspondence Table linking STRING protein entities to Ensembl genomic coordinates and official gene nomenclature:
-
-STRING Protein ID <-> Ensembl Protein ID <-> Ensembl Gene ID <-> Gene Symbol
-
----
-
-## 2. Biological Foundations & Identifier Definitions
-
-### 2.1 Taxon ID.Ensembl Protein ID
-* **Definition:** STRING's standard multi-species protein identifier.
-* **Format:** It prefixes the Ensembl Protein accession with the NCBI Taxonomy ID followed by a dot:
-  10090.ENSMUSP00000000001
-  * 10090: NCBI Taxonomy ID for Mus musculus.
-  * ENSMUSP00000000001: Ensembl Protein identifier.
-
-### 2.2 HGNC / MGI Gene Symbol
-* Standardized, human-readable gene nomenclature approved by official nomenclature authorities (HGNC for human, MGI for mouse).
-* Examples: Gnai3, Tp53, Fau, Rps11.
-
-### 2.3 Gene vs. Transcript vs. Protein Hierarchy
-Biological information flows sequentially according to the Central Dogma:
-Gene (DNA, ENSMUSG) -> Transcript (mRNA, ENSMUST) -> Protein (CDS, ENSMUSP)
-
-* **Gene (DNA / ENSMUSG):** The chromosomal locus encoding instructions.
-* **Transcript (mRNA / ENSMUST):** The single-stranded RNA copy. Through alternative splicing, one gene can produce multiple transcript isoforms.
-* **Protein (Polypeptide / ENSMUSP):** The functional amino acid machine translated by the ribosome from the coding sequence (CDS).
+| Task ID | Description | Status & Result |
+| :---: | :--- | :--- |
+| **95** | Understand GFF3 9-column format | Verified: seqid, source, type, start, end, score, strand, phase, attributes |
+| **96** | STRING ID to Ensembl Gene ID table | Completed: 97.6% coverage (21,318 / 21,840 mapped) |
+| **97** | Map transcript coordinates to protein & genes | Completed: Output in `results/transcript_coordinates_mapping.tsv` |
+| **98** | Summarize data schemas | Completed: Documented GFF3 and STRING link schemas |
+| **99** | STRING confidence score mechanism | Completed: Probabilistic integration across 7 biological channels |
+| **100** | Summarize molecular feature counts | Completed: 869,452 exons, 527,234 CDS, 66,153 mRNAs, 25,412 genes |
+| **101** | Unique chromosomes in GFF | Completed: 22 canonical chromosomes (1–19, X, Y, MT) + unplaced scaffolds |
 
 ---
 
-## 3. Correspondence Table (STRING to Ensembl)
+## 2. Key Findings & Statistics
 
-### 3.1 Mapping Methodology
-Ensembl's genes.gff3.gz encodes features in a parent-child hierarchy:
-CDS (Protein ID) -> Transcript -> Gene
+### A. Chromosomes (Task 101)
+* **Canonical Chromosomes:** 19 autosomes (`1`–`19`), 2 sex chromosomes (`X`, `Y`), and mitochondrial genome (`MT`).
+* **Unplaced Scaffolds:** Sequence fragments (`GL...`, `JH...`, `MU...`) representing assembly contigs not anchored to canonical chromosomes.
 
-The script scripts/map_string_ensembl.py executes a two-step lookup:
-1. Resolves CDS entries to parent transcripts (ENSMUST...).
-2. Links transcripts to parent genomic genes (ENSMUSG...).
-3. Strips the 10090. taxon prefix from STRING entries and performs an exact inner join.
+### B. Molecular Feature Counts (Task 100)
+* **Exons:** 869,452
+* **CDS:** 527,234
+* **mRNA:** 66,153
+* **Genes (protein-coding):** 25,412
+* **Alternative Splicing Ratio:** ~2.6 mRNA transcripts per gene locus.
 
-### 3.2 Mapping Statistics
-* **STRING Mouse Proteins Parsed:** 21,840
-* **Successfully Mapped to Ensembl Gene:** 21,318 (97.6% coverage)
-* **Unmapped / Pseudogenes / Non-coding:** 522 (2.4%)
+---
 
-### 3.3 Sample Output (results/string_to_ensembl_mapping_sample.tsv)
+## 3. Results Preview
 
-| STRING Protein ID | Ensembl Protein ID | Ensembl Gene ID | Gene Symbol |
+### Correspondence Table (Task 96)
+Found in `results/string_to_ensembl_mapping_sample.tsv`:
+| STRING_Protein_ID | Ensembl_Protein_ID | Ensembl_Gene_ID | Gene_Symbol |
 | :--- | :--- | :--- | :--- |
 | 10090.ENSMUSP00000000001 | ENSMUSP00000000001 | ENSMUSG00000000001 | Gnai3 |
-| 10090.ENSMUSP00000000003 | ENSMUSP00000000003 | ENSMUSG00000000003 | Pbsn |
-| 10090.ENSMUSP00000000010 | ENSMUSP00000000010 | ENSMUSG00000020875 | Hoxb9 |
 | 10090.ENSMUSP00000000028 | ENSMUSP00000000028 | ENSMUSG00000000028 | Cdc45 |
 | 10090.ENSMUSP00000000049 | ENSMUSP00000000049 | ENSMUSG00000000049 | Apoh |
-| 10090.ENSMUSP00000000058 | ENSMUSP00000000058 | ENSMUSG00000000058 | Cav2 |
-| 10090.ENSMUSP00000000080 | ENSMUSP00000000080 | ENSMUSG00000000078 | Klf6 |
-| 10090.ENSMUSP00000000090 | ENSMUSP00000000090 | ENSMUSG00000000088 | Cox5a |
-| 10090.ENSMUSP00000000095 | ENSMUSP00000000095 | ENSMUSG00000000093 | Tbx2 |
-| 10090.ENSMUSP00000000122 | ENSMUSP00000000122 | ENSMUSG00000000120 | Ngfr |
 
-Full mapping is saved in results/string_to_ensembl_mapping.tsv.
+### Transcript Coordinates Mapping (Task 97)
+Found in `results/transcript_coordinates_mapping_sample.tsv`:
+| Chromosome | Start | End | Strand | Transcript_ID | Protein_ID | Ensembl_Gene_ID | Gene_Name |
+| :---: | :---: | :---: | :---: | :--- | :--- | :--- | :--- |
+| 1 | 3284705 | 3741721 | - | ENSMUST00000070533 | ENSMUSP00000070648 | ENSMUSG00000051951 | Xkr4-201 |
+| 1 | 4069780 | 4479464 | - | ENSMUST00000208660 | NA | ENSMUSG00000025900 | Rp1-202 |
+| 1 | 4414369 | 4430537 | - | ENSMUST00000027032 | ENSMUSP00000027032 | ENSMUSG00000025900 | Rp1-201 |
 
-## 3. Correspondence Table (STRING to Ensembl)
+---
 
-### 3.1 Pipeline Architecture
+## 4. STRING Confidence Score Calculation (Task 99)
 
-The parsing logic in `scripts/map_string_ensembl.py` connects the genomic coordinate layer to the protein interaction space via a two-step hierarchical resolution:
+STRING calculates confidence scores by integrating 7 evidence channels:
+1. Experiments (biochemical assays)
+2. Databases (curated pathways)
+3. Text-mining (literature co-occurrence)
+4. Co-expression
+5. Neighborhood
+6. Gene Fusion
+7. Co-occurrence
 
-```text
-[ genes.gff3.gz ]                                [ 10090.protein.info.v12.0.txt.gz ]
-       │                                                          │
-       ▼                                                          ▼
-1. CDS points to Parent Transcript               1. Strip "10090." Taxon prefix
-   (ENSMUSP... -> ENSMUST...)                       (10090.ENSMUSP... -> ENSMUSP...)
-       │                                                          │
-       ▼                                                          │
-2. Transcript points to Parent Gene                               │
-   (ENSMUST... -> ENSMUSG...)                                     │
-       │                                                          │
-       ▼                                                          ▼
-  [ CDS -> Gene Dictionary ] ──────── Inner Join ──────── [ Ensembl Protein ID Key ]
-                                       │
-                                       ▼
-                       [ Final Correspondence Table ]
-                     (21,318 matched proteins: 97.6%)
+**Formula:**
+$$S_{\text{combined}} = 1 - \prod_{i} (1 - S_i)$$
+$$\text{Final Score} = S_{\text{combined}} \times 1000$$
+
+* Highest Confidence: $\ge 900$ (filters down to ~150,000 top interactions)
+* Medium Confidence: $\ge 400$
