@@ -215,3 +215,15 @@ Quantifying feature types (Column 3) reveals the structural composition of the *
 Extracting unique entries from Column 1 (`seqid`) classifies genomic reference sequences into physical chromosomes versus unplaced assembly contigs:
 ```bash
 cut -f 1 data/genes.gff3 | sort -u
+
+### 2. Chromosomal Architecture & Diversity Classification
+
+| Sequence Classification | Total Identifiers | Nomenclature Examples | Biological Definition & Assembly Role |
+| :--- | :---: | :--- | :--- |
+| **Autosomes** | **19** | `1`, `2`, `3`, ..., `19` | The 19 non-sex canonical mouse chromosomes resolved telomere-to-telomere. |
+| **Sex Chromosomes** | **2** | `X`, `Y` | Allosomes determining biological sex. |
+| **Mitochondrial Genome** | **1** | `MT` | Circular non-nuclear DNA encoding essential metabolic subunits. |
+| **Unplaced Scaffolds** | **Multi-contig** | `GL456210.1`, `JH584295.1`, `MU058440.1` | Unanchored contigs with confirmed genomic loci lacking chromosome map positions. |
+
+### 3. Key Takeaway for Downstream Research
+Primary genomic pipelines typically filter analyses to the **22 canonical assemblies** (`1–19`, `X`, `Y`, `MT`) to avoid ambiguous multi-mapping artifacts caused by unplaced scaffolds, while retaining scaffolds when auditing whole-genome copy number variations.
