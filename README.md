@@ -143,49 +143,62 @@ A data schema formalizes the technical specification of the datasets used across
 ## Task 99: STRING Confidence Scoring Methodology & High-Confidence Interactome
 
 ### 1. Conceptual Framework
-STRING functional association scores represent an estimate of probability that at least one biological interaction exists between two proteins. These scores range from $0$ to $1000$ (representing probabilities scaled by $1000$).
+STRING functional association scores represent an estimate of probability that a biologically meaningful interaction exists between two proteins. These scores range from **0 to 1000**, representing probabilities scaled by 1000 ($P = 0.999 \implies \text{Score} = 999$).
+
+---
 
 ### 2. The 7 Biological Evidence Channels
-STRING derives functional scores by querying 7 independent biological channels:
-1. **Experiments:** Direct biochemical evidence (e.g., Co-IP, Yeast Two-Hybrid, tandem affinity purification).
-2. **Databases:** Manually curated pathway knowledge from established repositories (KEGG, Reactome, BioCyc).
-3. **Text-mining:** Natural language processing of scientific abstracts (PubMed) quantifying joint co-mentions.
-4. **Co-expression:** Correlated gene expression across varied microarray and RNA-seq experimental conditions.
-5. **Neighborhood:** Genomic proximity of gene pairs across multiple bacterial and eukaryotic genomes.
-6. **Gene Fusion:** Orthologous gene pairs fused into a single polypeptide chain in other evolutionary lineages.
-7. **Co-occurrence:** Phylogenetic profiling tracking simultaneous presence or absence across taxonomic clades.
+STRING integrates independent evidence across seven distinct biological and computational channels:
+
+* **Experiments:** Direct physical interaction evidence validated through wet-lab assays (e.g., Co-IP, Yeast Two-Hybrid, tandem affinity purification).
+* **Databases:** Manually curated pathway and complex knowledge aggregated from expert repositories (e.g., KEGG, Reactome, BioCyc).
+* **Text-mining:** Natural Language Processing (NLP) models scanning scientific literature (PubMed) to score statistically significant gene/protein co-mentions.
+* **Co-expression:** Correlated transcriptional activity across thousands of heterogeneous microarray and RNA-seq gene expression experiments.
+* **Neighborhood:** Genomic proximity of gene pairs across diverse organisms, based on conserved operon structures in prokaryotes.
+* **Gene Fusion:** Independent gene pairs in one species that have fused into a single polypeptide chain in other evolutionary lineages.
+* **Co-occurrence:** Phylogenetic profiling tracking the simultaneous presence or absence of orthologous gene pairs across taxonomic clades.
+
+---
 
 ### 3. Mathematical Integration Model
-Each channel calculates an individual confidence score $S_i \\in [0, 1]$ corrected against random background expectations. Assuming the evidence sources provide independent observations, individual error probabilities $(1 - S_i)$ are combined:
+Each channel $i$ computes an individual confidence score $S_i \in [0, 1]$. Assuming each source provides independent evidence, individual error probabilities $(1 - S_i)$ are multiplied to compute the joint probability that all channels are wrong simultaneously:
 
-$$S_{\\text{combined}} = 1 - \\prod_{i=1}^{7} (1 - S_i)$$
+$$S_{\text{combined}} = 1 - \prod_{i=1}^{7} (1 - S_i)$$
 
-The integrated score is then scaled to an integer range:
-$$\\text{Score}_{\\text{final}} = \\text{round}(S_{\\text{combined}} \\times 1000)$$
+The integrated probability is then scaled to an integer score:
+
+$$\text{Score}_{\text{final}} = \text{round}(S_{\text{combined}} \times 1000)$$
+
+#### Calculation Example:
+If an interaction is supported by direct wet-lab experiments ($S_{\text{exp}} = 0.60$) and curated databases ($S_{\text{db}} = 0.50$), with no evidence from other channels:
+* $S_{\text{combined}} = 1 - (1 - 0.60)(1 - 0.50) = 1 - (0.40 \times 0.50) = 1 - 0.20 = 0.80$
+* $\text{Score}_{\text{final}} = \text{round}(0.80 \times 1000) = \mathbf{800}$ (High Confidence)
+
+---
 
 ### 4. Standard Operational Thresholds
-* **Highest Confidence (>= 900):** Used for strict interactome topological analyses to eliminate false-positive edges.
-* **High Confidence (>= 700):** High-reliability interactions.
-* **Medium Confidence (>= 400):** Default STRING threshold balancing sensitivity and specificity.
-* **Low Confidence (>= 150):** Broad exploratory discovery.
+* **Highest Confidence ($\ge 900$):** Used for strict topological interactome analyses to eliminate false-positive edges.
+* **High Confidence ($\ge 700$):** High-reliability interactions for pathway enrichment and functional module discovery.
+* **Medium Confidence ($\ge 400$):** Default STRING threshold balancing sensitivity and specificity.
+* **Low Confidence ($\ge 150$):** Broad exploratory screening.
 
-### 5. High-Confidence Interaction Sample Table (>= 900)
-Representative high-confidence protein pairs extracted directly from `data/10090.protein.physical.links.v12.0.txt.gz`:
+---
+
+### 5. High-Confidence Interaction Sample Table ($\ge 900$)
+Representative physical interaction pairs extracted directly from `data/10090.protein.physical.links.v12.0.txt.gz`:
 
 | Interacting Partner 1 (`protein1`) | Interacting Partner 2 (`protein2`) | Combined Confidence Score | Biological Interpretation |
 | :--- | :--- | :---: | :--- |
-| `10090.ENSMUSP00000000001` | `10090.ENSMUSP00000030003` | **999** | Highest confidence (multi-channel experimental + pathway verification) |
+| `10090.ENSMUSP00000000001` | `10090.ENSMUSP00000030003` | **999** | G-protein signaling complex (Gnai3 subunit interaction) |
 | `10090.ENSMUSP00000000001` | `10090.ENSMUSP00000003661` | **986** | Validated biochemical complex partner |
 | `10090.ENSMUSP00000000001` | `10090.ENSMUSP00000000028` | **954** | High-stringency pathway co-association |
-| `10090.ENSMUSP00000000028` | `10090.ENSMUSP00000022353` | **992** | DNA replication complex physical interaction |
+| `10090.ENSMUSP00000000028` | `10090.ENSMUSP00000022353` | **992** | CMG helicase / DNA replication fork complex |
 | `10090.ENSMUSP00000000028` | `10090.ENSMUSP00000005234` | **989** | Cell cycle regulation partner |
-| `10090.ENSMUSP00000000028` | `10090.ENSMUSP00000031120` | **975** | Co-crystallized physical binding |
+| `10090.ENSMUSP00000000028` | `10090.ENSMUSP00000031120` | **975** | Co-crystallized physical binding subunit |
 | `10090.ENSMUSP00000000049` | `10090.ENSMUSP00000014289` | **960** | Apolipoprotein / lipid transport cascade |
 | `10090.ENSMUSP00000000058` | `10090.ENSMUSP00000025114` | **998** | Caveolae membrane scaffolding complex |
 | `10090.ENSMUSP00000000085` | `10090.ENSMUSP00000032901` | **942** | Krüppel-like transcription factor complex |
 | `10090.ENSMUSP00000000093` | `10090.ENSMUSP00000019488` | **999** | Cytochrome c oxidase mitochondrial core subunit |
-
----
 
 ## Task 100: Molecular Feature Census in GFF3
 
