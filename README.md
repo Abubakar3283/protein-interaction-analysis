@@ -2,7 +2,7 @@ markdown_text = """# Comprehensive Mouse Genomic & Interactome Analysis Pipeline
 
 This repository hosts computational genomics and network biology pipelines for *Mus musculus* (Taxon ID: `10090`) developed under the supervision of **Professor Ping-Han Hsieh**.
 
-The project integrates reference genomic annotations from **Ensembl** (release GRCm39) with the interactome data from the **STRING Database** (v12.0) to construct verified multi-tier mapping tables and resolve physical genomic loci for downstream bioinformatics analysis.
+The project integrates reference genomic annotations from **Ensembl** (release GRCm39 (Genome Reference Consortium Mouse Build 39)) with the interactome data from the **STRING Database** (v12.0) to construct verified multi-tier mapping tables and resolve physical genomic loci for downstream bioinformatics analysis.
 
 ---
 
