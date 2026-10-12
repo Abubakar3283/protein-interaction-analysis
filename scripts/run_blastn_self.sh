@@ -14,7 +14,7 @@ mkdir -p ${RESULTS_DIR}
 
 echo "=== Starting BLASTN Self-Alignment Pipeline ==="
 
-# 2. Database verification (Task 107)
+# 2. Database verification
 if [ ! -f "${DATA_DIR}/mouse_cdna_db.nsq" ]; then
     echo "[Step 1] Building BLAST nucleotide database from ${DATA_DIR}/cdna.fa..."
     makeblastdb -in ${DATA_DIR}/cdna.fa -dbtype nucl -out ${DATA_DIR}/mouse_cdna_db
@@ -22,7 +22,7 @@ else
     echo "[Step 1] Database mouse_cdna_db already exists. Skipping makeblastdb."
 fi
 
-# 3. Running BLASTN against itself (Task 107)
+# 3. Running BLASTN against itself
 # Using -outfmt 6 (Tabular), multi-threading for speed, and E-value threshold
 echo "[Step 2] Executing blastn (cdna.fa vs mouse_cdna_db)..."
 blastn \
