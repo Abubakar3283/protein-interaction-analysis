@@ -5,16 +5,16 @@ echo "=========================================================="
 echo "   STARTING COMPLETE MOUSE BLAST ANALYSIS PIPELINE        "
 echo "=========================================================="
 
-# 1. فولڈرز کی ساخت کی تصدیق
+# 1. Directory verification
 mkdir -p data results scripts
 
 # ------------------------------------------------------------
-# مرحلہ ۱: ٹرانسکرپٹ اور BLASTN انالسز (پچھلے ٹاسک: 107-109)
+# Phase 1: Transcript & BLASTN Analysis (Tasks 107-109)
 # ------------------------------------------------------------
 echo ""
 echo ">>> [Phase 1/3] Checking BLASTN & Transcript Translation Tasks..."
 
-# اگر ترجمہ شدہ فائل موجود نہیں تو پائتھن اسکرپٹ چلائیں
+# Check if translated protein BLASTN results exist; if not, run translation
 if [ ! -f "results/protein_blastn_translated.tsv" ]; then
     if [ -f "scripts/translate_blastn_to_protein.py" ]; then
         echo "Running transcript-to-protein translation script..."
@@ -23,16 +23,16 @@ if [ ! -f "results/protein_blastn_translated.tsv" ]; then
         echo "Warning: scripts/translate_blastn_to_protein.py not found. Skipping translation."
     fi
 else
-    echo "✔ results/protein_blastn_translated.tsv already exists. (Skipping)"
+    echo "[OK] results/protein_blastn_translated.tsv already exists. (Skipping)"
 fi
 
 # ------------------------------------------------------------
-# مرحلہ ۲: پروٹین ڈیٹا بیس اور BLASTP رن (ٹاسک: 119-120)
+# Phase 2: Protein Database & BLASTP Run (Tasks 119-120)
 # ------------------------------------------------------------
 echo ""
 echo ">>> [Phase 2/3] Checking Protein Database & BLASTP Self-Alignment..."
 
-# پروٹین ڈیٹا بیس چیک کریں
+# Format BLASTP database if not already present
 if [ ! -f "data/mouse_protein_db.phr" ]; then
     if [ -f "data/Mus_musculus.GRCm39.pep.all.fa" ]; then
         echo "Formatting mouse protein BLAST database..."
@@ -45,10 +45,10 @@ if [ ! -f "data/mouse_protein_db.phr" ]; then
         exit 1
     fi
 else
-    echo "✔ Protein BLAST database already formatted. (Skipping)"
+    echo "[OK] Protein BLAST database already formatted. (Skipping)"
 fi
 
-# BLASTP سیلف الائنمنٹ چیک کریں
+# Run BLASTP all-against-all self-alignment if output does not exist
 if [ ! -f "results/protein_blastp_self_results.tsv" ]; then
     echo "Running all-against-all BLASTP (8 threads)..."
     blastp -query data/Mus_musculus.GRCm39.pep.all.fa \
@@ -60,18 +60,18 @@ if [ ! -f "results/protein_blastp_self_results.tsv" ]; then
            -num_threads 8
     echo "BLASTP search completed."
 else
-    echo "✔ results/protein_blastp_self_results.tsv already exists. (Skipping)"
+    echo "[OK] results/protein_blastp_self_results.tsv already exists. (Skipping)"
 fi
 
 # ------------------------------------------------------------
-# مرحلہ ۳: تقابلی تجزیہ، کوریلیشن اور گراف بنانا (ٹاسک: 121)
+# Phase 3: Comparative Analysis & Scatterplot (Task 121)
 # ------------------------------------------------------------
 echo ""
 echo ">>> [Phase 3/3] Running BLASTN vs BLASTP Comparison & Visualization..."
 
 if [ -f "scripts/compare_blastn_blastp.py" ]; then
     python3 scripts/compare_blastn_blastp.py
-    echo "✔ Comparison complete and scatterplot generated."
+    echo "[OK] Comparison complete and scatterplot generated."
 else
     echo "Error: scripts/compare_blastn_blastp.py not found!"
     exit 1
@@ -79,6 +79,6 @@ fi
 
 echo ""
 echo "=========================================================="
-echo "✔ ALL TASKS COMPLETED SUCCESSFULLY!"
-echo "Master pipeline executed safely without duplicating files."
+echo "[SUCCESS] ALL TASKS COMPLETED SUCCESSFULLY!"
+echo "Master pipeline executed cleanly."
 echo "=========================================================="
