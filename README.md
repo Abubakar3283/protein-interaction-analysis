@@ -241,3 +241,18 @@ cut -f 1 data/genes.gff3 | sort -u
 
 ### 3. Key Takeaway for Downstream Research
 Primary genomic pipelines typically filter analyses to the **22 canonical assemblies** (`1–19`, `X`, `Y`, `MT`) to avoid ambiguous multi-mapping artifacts caused by unplaced scaffolds, while retaining scaffolds when auditing whole-genome copy number variations.
+
+## Task 121: BLASTN vs BLASTP Similarity Comparison
+
+### Overview
+Comparison between nucleotide sequence identity (BLASTN translated to protein space) and direct amino acid sequence identity (BLASTP) for *Mus musculus* protein pairs.
+
+### Key Metrics
+- **BLASTN Unique Pairs:** 247,821
+- **BLASTP Unique Pairs:** 1,551,771
+- **Common Pairs Identified:** 229,468
+- **Pearson Correlation (r):** 0.6400
+- **Spearman Correlation (rho):** 0.4387
+
+### Correlation Scatterplot
+![BLASTN vs BLASTP Comparison](results/blastn_vs_blastp_scatterplot.png)

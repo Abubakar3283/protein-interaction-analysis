@@ -1,3 +1,8 @@
 data/
 data/*.gz
 results/*.tsv
+*.tsv
+*.fa
+*.gz
+data/
+results/*.tsv
