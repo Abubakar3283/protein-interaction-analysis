@@ -1,57 +1,42 @@
-# Task 121: Sequence Similarity Comparison Between BLASTN and BLASTP
+# Task 121: BLASTN vs BLASTP Similarity Comparison
 
-## 1. Overview & Biological Objective
-Nucleotide-level similarity (BLASTN) and amino acid-level similarity (BLASTP) provide complementary evolutionary insights. Due to codon degeneracy, nucleotide sequences often diverge faster than corresponding protein sequences.
+## 1. Summary
+Comparison between transcript-derived protein identity (BLASTN) and direct amino acid identity (BLASTP) in Mus musculus.
 
-This task compares:
-1. **BLASTN-derived Protein Pairs:** Transcripts aligned via BLASTN and mapped to protein IDs (`results/protein_blastn_translated.tsv`).
-2. **Direct BLASTP Pairs:** Protein sequences aligned directly against the mouse proteome (`results/protein_blastp_self_results.tsv`).
-
-The objective is to quantify correlation, find overlapping pairs, and visualize the similarity distribution via a scatterplot.
-
----
-
-## 2. Execution Pipeline
-
+## 2. Pipeline
 ```text
        Mus_musculus.GRCm39.pep.all.fa
                        │
-                       ▼  [ makeblastdb -dbtype prot ]
+                       ▼  [ makeblastdb ]
             data/mouse_protein_db
                        │
-                       ▼  [ blastp -num_threads 8 -max_target_seqs 50 -evalue 1e-5 ]
-         results/protein_blastp_self_results.tsv  (197 MB | 1,551,771 Unique Pairs)
+                       ▼  [ blastp ]
+         results/protein_blastp_self_results.tsv (197 MB)
                        │
-                       ├─────────────────────────────────────────────────┐
-                       │                                                 │
-                       ▼                                                 ▼
-       results/protein_blastp_self_results.tsv         results/protein_blastn_translated.tsv
-          (Direct Protein Identity %)                   (Translated Nucleotide Identity %)
-                       │                                                 │
-                       │           [ scripts/compare_blastn_blastp.py ] │
-                       └───────────────────────────────┬─────────────────┘
-                                                       │
-                                        Inner Join on (qseqid, sseqid)
-                                                       │
-                                                       ▼
-                                         COMMON PAIRS: 229,468
-                                    Pearson r: 0.6400 | Spearman rho: 0.4387
-                                                       │
-                                ┌──────────────────────┴──────────────────────┐
-                                ▼                                             ▼
-            results/blastn_vs_blastp_merged.tsv        results/blastn_vs_blastp_scatterplot.png
+                       ├─────────────────────────────────┐
+                       ▼                                 ▼
+       results/protein_blastp_self_results.tsv  results/protein_blastn_translated.tsv
+          (BLASTP Protein Identity)               (BLASTN Translated Identity)
+                       │                                 │
+                       └────────────────┬────────────────┘
+                                        ▼
+                         [ compare_blastn_blastp.py ]
+                                        │
+                                        ▼
+                             Common Pairs: 229,468
+                    Pearson r: 0.6400 | Spearman rho: 0.4387
+                                        │
+                         ┌──────────────┴──────────────┐
+                         ▼                             ▼
+        results/blastn_vs_blastp_merged.tsv   results/blastn_vs_blastp_scatterplot.png
+```
 
-project-practice/
-├── data/
-│   ├── Mus_musculus.GRCm39.pep.all.fa          # Primary mouse protein FASTA
-│   └── mouse_protein_db.*                      # Formatted BLASTP database files
-├── scripts/
-│   └── compare_blastn_blastp.py                # Python analysis & visualization script
-├── results/
-│   ├── protein_blastn_translated.tsv           # Input 1: Translated BLASTN results
-│   ├── protein_blastp_self_results.tsv         # Input 2: BLASTP self-alignment results (197 MB)
-│   ├── blastn_vs_blastp_merged.tsv             # Matched common protein pairs (229,468 rows)
-│   └── blastn_vs_blastp_scatterplot.png        # Comparative identity scatterplot
-└── Task_121_blastn_vs_blastp_comparison.md     # Pipeline documentation
+## 3. Key Metrics
+- BLASTN Unique Pairs: 247,821
+- BLASTP Unique Pairs: 1,551,771
+- Common Overlapping Pairs: 229,468
+- Pearson Correlation (r): 0.6400
+- Spearman Correlation (rho): 0.4387
 
-
+## 4. Result Graph
+![BLASTN vs BLASTP Scatterplot](results/blastn_vs_blastp_scatterplot.png)
