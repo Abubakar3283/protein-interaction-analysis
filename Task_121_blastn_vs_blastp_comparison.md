@@ -1,7 +1,7 @@
 # Task 121: BLASTN vs BLASTP Similarity Comparison
 
 ## 1. Summary
-Comparison between transcript-derived protein identity (BLASTN) and direct amino acid identity (BLASTP) in Mus musculus.
+Comparison between transcript derived protein identity (BLASTN) and direct amino acid identity (BLASTP) in Mus musculus.
 
 ## 2. Pipeline
 ```text
