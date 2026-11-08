@@ -1,0 +1,3 @@
+##gff-version 3
+gene_promoter_test_1	fimo	nucleotide_motif	7	16	41.5	-	.	Name=MA1726.2_gene_promoter_test_1-;Alias=ZNF331;ID=MA1726.2-ZNF331-1-gene_promoter_test_1;pvalue=7.07e-05;qvalue=0.0126;sequence=CGCTGAGCCT;
+gene_promoter_test_1	fimo	nucleotide_motif	7	15	41.7	-	.	Name=MA1730.2_gene_promoter_test_1-;Alias=ZNF708;ID=MA1730.2-ZNF708-1-gene_promoter_test_1;pvalue=6.7e-05;qvalue=0.0125;sequence=GCTGAGCCT;

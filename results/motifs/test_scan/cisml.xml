@@ -1,0 +1,4486 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<command-line>fimo --oc results/motifs/test_scan --thresh 1e-4 data/motifs/JASPAR2024_CORE_vertebrates_non-redundant_pfms_meme.txt data/motifs/test_promoter.fa</command-line>
+<pattern-file>data/motifs/JASPAR2024_CORE_vertebrates_non-redundant_pfms_meme.txt</pattern-file>
+<sequence-file>data/motifs/test_promoter.fa</sequence-file>
+<site-pvalue-cutoff>0.0001</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="MA0004.1" name="Arnt">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0069.1" name="PAX6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0071.1" name="RORA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0074.1" name="RXRA::VDR">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0101.1" name="REL">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0107.1" name="RELA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0115.1" name="NR1H2::RXRA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0116.1" name="Znf423">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0119.1" name="NFIC::TLX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0130.1" name="ZNF354C">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0142.1" name="Pou5f1::Sox2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0149.1" name="EWSR1-FLI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0151.1" name="Arid3a">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0155.1" name="INSM1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0159.1" name="RARA::RXRA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0163.1" name="PLAG1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0145.2" name="Tfcp2l1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0468.1" name="DUX4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0515.1" name="Sox6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0258.2" name="ESR2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0595.1" name="SREBF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0596.1" name="SREBF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0599.1" name="KLF5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0604.1" name="Atf1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0608.1" name="Creb3l2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0613.1" name="FOXG1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0614.1" name="Foxj2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0636.1" name="BHLHE41">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0641.1" name="ELF4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0042.2" name="FOXI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0033.2" name="FOXL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0153.2" name="HNF1B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0486.2" name="HSF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0653.1" name="IRF9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0655.1" name="JDP2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0660.1" name="MEF2B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0663.1" name="MLX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0665.1" name="MSC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0667.1" name="MYF6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0669.1" name="NEUROG2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0676.1" name="Nr2e1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0678.1" name="OLIG2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0068.2" name="PAX4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0512.2" name="Rxra">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0083.3" name="SRF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0009.2" name="TBXT">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0689.1" name="TBX20">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0691.1" name="TFAP4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0696.1" name="ZIC1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0713.1" name="PHOX2A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0715.1" name="PROP1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0724.1" name="VENTX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0728.1" name="Nr2F6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0729.1" name="RARA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0730.1" name="RARA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0731.1" name="BCL6B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0472.2" name="EGR2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0736.1" name="GLIS2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0737.1" name="GLIS3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0741.1" name="KLF16">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0088.2" name="ZNF143">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0758.1" name="E2F7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0770.1" name="HSF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0771.1" name="HSF4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0773.1" name="MEF2D">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0774.1" name="MEIS2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0776.1" name="MYBL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0777.1" name="MYBL2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0105.4" name="NFKB1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0780.1" name="PAX3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0783.1" name="PKNOX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0787.1" name="POU3F2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0788.1" name="POU3F3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0789.1" name="POU3F4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0792.1" name="POU5F1B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0794.1" name="PROX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0795.1" name="SMAD3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0796.1" name="TGIF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0797.1" name="TGIF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0511.2" name="RUNX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0801.1" name="MGA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0803.1" name="TBX15">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0805.1" name="TBX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0806.1" name="TBX4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0807.1" name="TBX5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0808.1" name="TEAD3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0813.1" name="TFAP2B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0815.1" name="TFAP2C">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0816.1" name="Ascl2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0822.1" name="HES7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0823.1" name="HEY1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0826.1" name="OLIG1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0827.1" name="OLIG3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0838.1" name="CEBPG">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0845.1" name="FOXB1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0032.2" name="FOXC1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0848.1" name="FOXO4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0849.1" name="FOXO6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0850.1" name="FOXP3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0855.1" name="RXRB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0856.1" name="RXRG">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0857.1" name="Rarb">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0858.1" name="Rarb">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0860.1" name="Rarg">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0525.2" name="TP63">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0106.3" name="TP53">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0862.1" name="GMEB2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0863.1" name="MTF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0024.3" name="E2F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0866.1" name="SOX21">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0870.1" name="Sox1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0872.1" name="TFAP2A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1124.1" name="ZNF24">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1155.1" name="ZSCAN4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1127.1" name="FOSB::JUN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1129.1" name="FOSL1::JUN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1136.1" name="FOSB::JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1420.1" name="IRF5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1421.1" name="TCF7L1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1468.1" name="ATOH7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1485.1" name="FERD3L">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1489.1" name="FOXN3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1493.1" name="HES6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1509.1" name="IRF6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1538.1" name="NR2F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1539.1" name="NR2F6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1555.1" name="RXRB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1556.1" name="RXRG">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1557.1" name="SMAD5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1570.1" name="TFAP4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1571.1" name="TGIF2LX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1572.1" name="TGIF2LY">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1580.1" name="ZBTB32">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1587.1" name="ZNF135">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1588.1" name="ZNF136">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1594.1" name="ZNF382">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1596.1" name="ZNF460">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1597.1" name="ZNF528">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0158.2" name="HOXA5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0912.2" name="HOXD3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0623.2" name="NEUROG1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1715.1" name="ZNF707">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1718.1" name="ZNF8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1684.1" name="Foxn1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1931.1" name="ELK1::HOXA1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1957.1" name="HOXB2::ELK1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1962.1" name="POU2F1::SOX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1972.1" name="ZFP14">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1980.1" name="ZNF418">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1985.1" name="ZNF669">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0079.5" name="SP1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0509.3" name="RFX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0516.3" name="SP2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0607.2" name="BHLHA15">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0685.2" name="SP4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0740.2" name="KLF14">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0742.2" name="KLF12">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0798.3" name="RFX3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0818.2" name="BHLHE22">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0821.2" name="HES5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0831.3" name="TFE3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0878.3" name="CDX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0884.2" name="DUXA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1511.2" name="KLF10">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1532.2" name="NR1D2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1547.2" name="PITX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1563.2" name="SOX18">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1573.2" name="Thap11">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1601.2" name="ZNF75D">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1633.2" name="BACH1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0621.2" name="mix-a">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0259.2" name="ARNT::HIF1A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2323.1" name="Pgr">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0019.2" name="Ddit3::Cebpa">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0040.2" name="Foxq1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2093.1" name="HOXB1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2094.1" name="PAX8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2096.1" name="ZNF524">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2097.1" name="ZNF75A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2098.1" name="ZNF766">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2099.1" name="ZNF770">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2100.1" name="ZSCAN16">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2101.1" name="ZNF677">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2102.1" name="ZBTB17">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2117.1" name="FOXP4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2118.1" name="FOXS1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2119.1" name="HOXA3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2120.1" name="ZNF184">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2121.1" name="ZNF213">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2324.1" name="BCL11A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2325.1" name="EPAS1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2326.1" name="IKZF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2327.1" name="PGR">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2328.1" name="ZBED4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2329.1" name="ZBTB11">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2330.1" name="ZBTB24">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2331.1" name="ZNF157">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2332.1" name="ZNF175">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2333.1" name="ZNF35">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2334.1" name="ZNF547">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2335.1" name="ZNF558">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2336.1" name="ZSCAN21">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2341.1" name="FEZF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0634.2" name="ALX3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0690.3" name="TBX21">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1463.2" name="ARGFX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1464.2" name="ARNT2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1100.3" name="ASCL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1631.2" name="ASCL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1632.2" name="ATF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0605.3" name="ATF3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0833.3" name="ATF4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1466.2" name="ATF6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0834.2" name="ATF7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0496.4" name="MAFK">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1101.3" name="BACH2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1470.2" name="BACH2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0877.4" name="BARHL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0635.2" name="BARHL2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0875.2" name="BARX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1471.2" name="BARX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1634.2" name="BATF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0462.3" name="BATF::JUN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0488.2" name="JUN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0835.3" name="BATF3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0463.3" name="BCL6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1635.2" name="BHLHE22">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0817.2" name="BHLHE23">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0464.3" name="BHLHE40">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1928.2" name="BNC2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0876.2" name="BSX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0465.3" name="CDX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1473.2" name="CDX4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0102.5" name="CEBPA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0466.4" name="CEBPB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0836.3" name="CEBPD">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0837.3" name="CEBPE">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1636.2" name="CEBPG">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0819.3" name="CLOCK">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0018.5" name="CREB1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0638.2" name="CREB3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0839.2" name="CREB3L1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1474.2" name="CREB3L4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1475.2" name="CREB3L4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0609.3" name="CREM">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0139.2" name="CTCF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1929.2" name="CTCF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1930.2" name="CTCF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1102.3" name="CTCFL">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0754.3" name="CUX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0901.3" name="HOXB13">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0755.2" name="CUX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0639.2" name="DBP">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0879.3" name="DLX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0882.2" name="DLX6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0610.2" name="DMRT3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1707.2" name="DMRTA1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1478.2" name="DMRTA2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1479.2" name="DMRTC2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1480.2" name="DPRX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1481.2" name="DRGX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0864.3" name="E2F2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0469.4" name="E2F3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0756.3" name="ONECUT2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0470.3" name="E2F4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0471.3" name="E2F6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0865.3" name="E2F8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0154.5" name="EBF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1637.2" name="EBF3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0162.5" name="EGR1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0732.2" name="EGR3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0733.2" name="EGR4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0598.4" name="EHF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0473.4" name="ELF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1483.3" name="ELF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0640.3" name="ELF3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0028.3" name="ELK1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0800.2" name="EOMES">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1708.2" name="ETV7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1495.2" name="HOXA1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1932.2" name="ELK1::HOXB13">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0779.2" name="PAX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0014.4" name="PAX5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0781.2" name="PAX9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0686.2" name="SPDEF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1933.2" name="ELK1::SREBF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0828.3" name="SREBF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0843.2" name="TEF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0759.3" name="ELK3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0076.3" name="ELK4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0612.3" name="EMX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0886.2" name="EMX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0027.3" name="EN1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0642.3" name="EN2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0760.2" name="ERF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1934.2" name="ERF::FIGLA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0820.2" name="FIGLA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1935.2" name="ERF::FOXI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1936.2" name="ERF::FOXO1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1937.2" name="ERF::HOXB13">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0058.4" name="MAX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1938.2" name="ERF::NHLH1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0048.3" name="NHLH1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1939.2" name="ERF::SREBF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0112.4" name="ESR1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0592.4" name="ESRRA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0141.4" name="ESRRB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0644.3" name="ESX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0098.4" name="ETS1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1484.2" name="ETS2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0761.3" name="ETV1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0762.2" name="ETV2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1940.2" name="ETV2::DRGX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1941.2" name="ETV2::FIGLA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1942.2" name="ETV2::FOXI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1943.2" name="ETV2::HOXB13">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0763.2" name="ETV3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0764.4" name="ETV4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0765.4" name="ETV5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1944.2" name="ETV5::DRGX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1945.2" name="ETV5::FIGLA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1946.2" name="ETV5::FOXI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1947.2" name="ETV5::FOXO1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1948.2" name="ETV5::HOXA2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0900.3" name="HOXA2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0645.2" name="ETV6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0887.2" name="EVX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0888.2" name="EVX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0156.4" name="FEV">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0475.3" name="FLI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1949.2" name="FLI1::DRGX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1950.2" name="FLI1::FOXI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0476.2" name="FOS">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1951.2" name="FOS">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0099.4" name="FOS::JUN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1126.2" name="FOS::JUN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1134.2" name="FOS::JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1140.3" name="JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0490.3" name="JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1141.2" name="FOS::JUND">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0492.2" name="JUND">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0491.3" name="JUND">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1135.2" name="FOSB::JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0477.3" name="FOSL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1128.2" name="FOSL1::JUN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1137.2" name="FOSL1::JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1142.2" name="FOSL1::JUND">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1143.2" name="FOSL1::JUND">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0478.2" name="FOSL2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1130.2" name="FOSL2::JUN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1131.2" name="FOSL2::JUN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1138.2" name="FOSL2::JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1139.2" name="FOSL2::JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1144.2" name="FOSL2::JUND">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1145.2" name="FOSL2::JUND">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0148.5" name="FOXA1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0047.4" name="FOXA2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1683.2" name="FOXA3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0846.2" name="FOXC2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0031.2" name="FOXD1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0847.4" name="FOXD2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0041.3" name="FOXD3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1487.3" name="FOXE1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0030.2" name="FOXF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0479.2" name="FOXH1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1952.2" name="FOXJ2::ELF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0682.3" name="PITX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0852.3" name="FOXK1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1103.3" name="FOXK2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1953.2" name="FOXO1::ELF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1954.2" name="FOXO1::ELK1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1955.2" name="FOXO1::ELK3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1956.2" name="FOXO1::FLI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0481.4" name="FOXP1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0593.2" name="FOXP2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0062.4" name="GABPA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0035.5" name="GATA1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0140.3" name="GATA1::TAL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0036.4" name="GATA2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0482.3" name="GATA4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0766.3" name="GATA5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1104.3" name="GATA6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0889.2" name="GBX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0890.2" name="GBX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0646.2" name="GCM1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0143.5" name="SOX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0767.2" name="GCM2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0038.3" name="GFI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1491.3" name="GLI3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0735.2" name="GLIS1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0647.2" name="GRHL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1105.3" name="GRHL2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0648.2" name="GSC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0891.2" name="GSC2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0892.2" name="GSX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0893.3" name="GSX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0522.4" name="TCF3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1638.2" name="HAND2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1099.3" name="HES1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0616.3" name="HES2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0894.2" name="HESX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0649.2" name="HEY2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0738.2" name="HIC2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1106.2" name="HIF1A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0131.3" name="HINFP">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0043.4" name="HLF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0895.2" name="HMBOX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0046.3" name="HNF1A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1494.2" name="HNF4A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0114.5" name="HNF4A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0484.3" name="HNF4G">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0899.2" name="HOXA10">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1496.2" name="HOXA4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1497.2" name="HOXA6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1498.3" name="HOXA7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0594.3" name="HOXA9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0902.3" name="HOXB2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1566.3" name="TBX3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0903.2" name="HOXB3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1499.2" name="HOXB4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0904.3" name="HOXB5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1500.2" name="HOXB6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1501.2" name="HOXB7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1502.2" name="HOXB8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1503.2" name="HOXB9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0905.2" name="HOXC10">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0651.3" name="HOXC11">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0906.2" name="HOXC12">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0907.2" name="HOXC13">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1504.2" name="HOXC4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1505.2" name="HOXC8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0485.3" name="HOXC9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1506.2" name="HOXD10">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0908.2" name="HOXD11">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0873.2" name="HOXD12">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1958.2" name="HOXD12::ELK1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1507.2" name="HOXD4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0910.3" name="HOXD8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0913.3" name="HOXD9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1508.2" name="IKZF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0051.2" name="IRF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1418.2" name="IRF3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1419.2" name="IRF4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0772.2" name="IRF7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0652.2" name="IRF8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0914.2" name="ISL2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0654.2" name="ISX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0656.2" name="JDP2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1132.2" name="JUN::JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1133.2" name="JUN::JUNB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0493.3" name="KLF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1512.2" name="KLF11">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0657.2" name="KLF13">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1513.2" name="KLF15">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1514.2" name="KLF17">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1515.2" name="KLF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1516.2" name="KLF3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0039.5" name="KLF4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1517.2" name="KLF6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1959.2" name="KLF7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1107.3" name="KLF9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0618.2" name="LBX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0699.2" name="LBX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0700.3" name="LHX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1519.2" name="LHX5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0658.2" name="LHX6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0701.3" name="LHX9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0702.3" name="LMX1A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0703.3" name="LMX1B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1520.2" name="MAF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0501.2" name="MAF::NFE2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0841.2" name="NFE2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1521.2" name="MAFA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0495.4" name="MAFF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0089.3" name="MAFG::NFE2L1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0059.2" name="MAX::MYC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0147.4" name="MYC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1522.2" name="MAZ">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0052.5" name="MEF2A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0497.2" name="MEF2C">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0498.3" name="MEIS1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1639.2" name="MEIS1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1640.2" name="MEIS2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0775.2" name="MEIS3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0661.2" name="MEOX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0706.2" name="MEOX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1960.2" name="MGA::EVX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0620.4" name="MITF">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0662.2" name="MIXL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0664.2" name="MLXIPL">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0825.2" name="MNT">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0707.3" name="MNX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1523.2" name="MSANTD3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0666.3" name="MSX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0708.3" name="MSX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1108.3" name="MXI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0100.4" name="MYB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0104.5" name="MYCN">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1641.2" name="MYF5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0499.3" name="MYOD1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0500.3" name="MYOG">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0056.3" name="MZF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1109.2" name="NEUROD1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1642.2" name="NEUROG2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0625.3" name="NFATC3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1525.3" name="NFATC4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0670.2" name="NFIA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1643.2" name="NFIB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0161.3" name="NFIC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1527.2" name="NFIC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0025.3" name="NFIL3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0671.2" name="NFIX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1528.2" name="NFIX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0778.2" name="NFKB2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0060.4" name="NFYA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0502.3" name="NFYB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1644.2" name="NFYC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1529.2" name="NHLH2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1645.2" name="NKX2-2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0672.2" name="NKX2-3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2003.2" name="NKX2-4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0063.3" name="NKX2-5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0673.2" name="NKX2-8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0674.2" name="NKX6-1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0675.2" name="NKX6-2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1530.2" name="NKX6-3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0710.2" name="NOTO">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1531.2" name="NR1D1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1146.2" name="NR1H4::RXRA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1533.2" name="NR1I2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1534.2" name="NR1I3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1535.2" name="NR2C1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0504.2" name="NR2C2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1536.2" name="NR2C2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0017.3" name="NR2F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1537.2" name="NR2F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1111.2" name="NR2F2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0113.4" name="NR3C1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0727.2" name="NR3C2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1112.3" name="NR4A1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0160.3" name="NR4A2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1147.2" name="NR4A2::RXRA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1541.2" name="NR6A1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0842.3" name="NRL">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0679.3" name="ONECUT1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0757.2" name="ONECUT3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1542.2" name="OSR1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1646.2" name="OSR2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0711.2" name="OTX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0712.3" name="OTX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1544.2" name="OVOL1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1545.2" name="OVOL2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1961.2" name="PATZ1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0067.3" name="PAX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1546.2" name="PAX3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0070.2" name="PBX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1113.3" name="PBX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1114.2" name="PBX3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0132.3" name="PDX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0681.3" name="PHOX2B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0714.2" name="PITX3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0782.3" name="PKNOX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1548.2" name="PLAGL2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0784.3" name="POU1F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0785.2" name="POU2F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0507.3" name="POU2F2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0627.3" name="POU2F3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0786.2" name="POU3F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0790.2" name="POU4F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0683.2" name="POU4F2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0791.2" name="POU4F3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1115.2" name="POU5F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0628.2" name="POU6F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1549.2" name="POU6F1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0793.2" name="POU6F2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1148.2" name="PPARA::RXRA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1550.2" name="PPARD">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0066.2" name="PPARG">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0508.4" name="PRDM1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1723.2" name="PRDM9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0716.2" name="PRRX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0075.4" name="PRRX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1149.2" name="RARA::RXRG">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1552.2" name="RARB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1553.2" name="RARG">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0718.2" name="RAX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0717.2" name="RAX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1116.2" name="RBPJ">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1117.2" name="RELB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0138.3" name="REST">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0600.3" name="RFX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0799.3" name="RFX4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0510.3" name="RFX5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1554.2" name="RFX7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0719.2" name="RHOXF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0072.2" name="RORA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1150.2" name="RORB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1151.2" name="RORC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0073.2" name="RREB1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0684.3" name="RUNX3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1963.2" name="SATB1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0743.3" name="SCRT1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0744.3" name="SCRT2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0630.2" name="SHOX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1118.2" name="SIX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1119.2" name="SIX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1964.2" name="SMAD2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1558.2" name="SNAI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0745.3" name="SNAI2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1559.2" name="SNAI3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1560.2" name="SOHLH2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0442.3" name="SOX10">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1561.2" name="SOX12">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1120.2" name="SOX13">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1562.2" name="SOX14">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1152.2" name="SOX15">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0867.3" name="SOX4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0868.3" name="SOX8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0077.2" name="SOX9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0746.3" name="SP3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1965.2" name="SP5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0747.2" name="SP8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1564.2" name="SP9">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0081.3" name="SPIB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0687.2" name="SPIC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0829.3" name="SREBF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0084.2" name="SRY">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0137.4" name="STAT1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0517.2" name="STAT1::STAT2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0144.3" name="STAT3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0091.2" name="TAL1::TCF3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0802.2" name="TBR1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1565.2" name="TBX18">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0804.2" name="TBX19">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0688.2" name="TBX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1648.2" name="TCF12">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1568.2" name="TCF21">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0830.3" name="TCF4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0769.3" name="TCF7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0523.2" name="TCF7L2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0632.3" name="TCFL5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0090.4" name="TEAD1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1121.2" name="TEAD2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0809.3" name="TEAD4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0810.2" name="TFAP2A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0003.5" name="TFAP2A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0811.2" name="TFAP2B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0812.2" name="TFAP2B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0524.3" name="TFAP2C">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0814.3" name="TFAP2C">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1569.2" name="TFAP2E">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1966.2" name="TFAP4::ETV1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1967.2" name="TFAP4::FLI1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1968.2" name="TFCP2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1122.2" name="TFDP1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0692.2" name="TFEB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0871.3" name="TFEC">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0597.3" name="THAP1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1969.2" name="THRA">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1574.2" name="THRB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1575.2" name="THRB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1576.2" name="THRB">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1577.2" name="TLX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0861.2" name="TP73">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1970.2" name="TRPS1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1123.3" name="TWIST1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0721.2" name="UNCX">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0093.4" name="USF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0526.5" name="USF2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0722.2" name="VAX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0723.3" name="VAX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1578.2" name="VEZF1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0725.2" name="VSX1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0726.2" name="VSX2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0844.2" name="XBP1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0748.3" name="YY2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0749.2" name="ZBED1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1971.2" name="ZBED2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1649.2" name="ZBTB12">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1650.2" name="ZBTB14">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0698.2" name="ZBTB18">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1579.2" name="ZBTB26">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0527.2" name="ZBTB33">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1581.2" name="ZBTB6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0750.3" name="ZBTB7A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0694.2" name="ZBTB7B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0695.2" name="ZBTB7C">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0103.4" name="ZEB1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1651.2" name="ZFP42">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1583.2" name="ZFP57">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0751.2" name="ZIC4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1584.2" name="ZIC5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1709.2" name="ZIM3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1585.2" name="ZKSCAN1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1973.2" name="ZKSCAN3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1652.2" name="ZKSCAN5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1589.2" name="ZNF140">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1653.2" name="ZNF148">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1654.2" name="ZNF16">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1725.2" name="ZNF189">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1974.2" name="ZNF211">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1975.2" name="ZNF214">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1710.2" name="ZNF257">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0528.3" name="ZNF263">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1592.2" name="ZNF274">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1630.3" name="ZNF281">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1154.2" name="ZNF282">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1593.2" name="ZNF317">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1976.2" name="ZNF320">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1977.2" name="ZNF324">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1726.2" name="ZNF331">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+<matched-element start="16" stop="7" score="10.5229" pvalue="7.07e-05">
+<sequence>CGCTGAGCCT</sequence>
+<mem:qvalue>0.0126</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1655.2" name="ZNF341">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1711.2" name="ZNF343">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1978.2" name="ZNF354A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1125.2" name="ZNF384">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0752.2" name="ZNF410">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1979.2" name="ZNF416">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1727.2" name="ZNF417">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1656.2" name="ZNF449">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1712.2" name="ZNF454">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1981.2" name="ZNF530">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1728.2" name="ZNF549">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1982.2" name="ZNF574">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1983.2" name="ZNF582">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1713.2" name="ZNF610">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1657.2" name="ZNF652">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1984.2" name="ZNF667">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1714.2" name="ZNF675">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1729.2" name="ZNF680">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1599.2" name="ZNF682">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1600.2" name="ZNF684">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1986.2" name="ZNF692">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1987.2" name="ZNF701">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1730.2" name="ZNF708">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+<matched-element start="15" stop="7" score="10.7064" pvalue="6.7e-05">
+<sequence>GCTGAGCCT</sequence>
+<mem:qvalue>0.0125</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0753.3" name="ZNF740">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1716.2" name="ZNF76">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1731.2" name="ZNF768">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1717.2" name="ZNF784">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1719.2" name="ZNF816">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1720.2" name="ZNF85">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1721.2" name="ZNF93">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1602.2" name="ZSCAN29">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1722.2" name="ZSCAN31">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0111.1" name="Spz1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2095.1" name="Sox7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2122.1" name="Ebf4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2123.1" name="Hand1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2124.1" name="Hmga1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2125.1" name="Zfp809">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2126.1" name="Zfp961">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2337.1" name="Nr1h3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2338.1" name="Ppara">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2339.1" name="Nanog">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2340.1" name="Zbtb2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0006.2" name="Ahr::Arnt">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0854.2" name="Alx1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0853.2" name="Alx4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0007.4" name="Ar">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0601.2" name="Arid3b">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0602.2" name="Arid5a">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0603.2" name="Arntl">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0874.2" name="Arx">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1988.2" name="Atf3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0461.3" name="Atoh1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1467.3" name="Atoh1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0591.2" name="Bach1::Mafk">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0489.3" name="Jun">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1989.2" name="Bcl11B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1472.3" name="Bhlha15">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0840.2" name="Creb5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0467.3" name="Crx">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0650.4" name="Hoxa13">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0885.3" name="Dlx2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0880.2" name="Dlx3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0881.2" name="Dlx4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1476.3" name="Dlx5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0883.2" name="Dmbx1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1603.2" name="Dmrt1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0611.3" name="Dux">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1604.2" name="Ebf2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0136.4" name="Elf5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0480.3" name="Foxo1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0474.4" name="Erg">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0643.2" name="Esrrg">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1606.2" name="Foxf1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0851.2" name="Foxj3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1607.2" name="Foxl2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0157.4" name="Foxo3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0037.5" name="Gata3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0483.2" name="Gfi1B">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1990.2" name="Gli1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0734.4" name="Gli2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0615.2" name="Gmeb1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0092.2" name="Hand1::Tcf3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0739.2" name="Hic1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0896.2" name="Hmx1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0897.2" name="Hmx2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0898.2" name="Hmx3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1991.2" name="Hnf1A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0911.2" name="Hoxa11">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0909.4" name="Hoxd13">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1992.2" name="Ikzf3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0050.4" name="Irf1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1608.2" name="Isl1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0768.3" name="Lef1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1518.3" name="Lhx1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0135.2" name="Lhx3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0704.2" name="Lhx4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0705.2" name="Lhx8">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0117.3" name="Mafb">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0659.4" name="Mafg">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0029.2" name="Mecom">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0622.2" name="Mlxip">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1524.3" name="Msgn1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0709.2" name="Msx3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1993.2" name="Neurod2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0668.3" name="Neurod2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0606.3" name="Nfat5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0624.3" name="Nfatc1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0152.3" name="Nfatc2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0150.3" name="Nfe2l2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1994.2" name="Nkx2-1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0124.3" name="Nkx3-1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0122.4" name="Nkx3-2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0125.2" name="Nobox">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0626.2" name="Npas2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1995.2" name="Npas4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1996.2" name="Nr1H2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0494.2" name="Nr1h3::Rxra">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1110.3" name="Nr1H4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0164.2" name="Nr2e3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0677.2" name="Nr2f6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1540.3" name="NR5A1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0505.3" name="Nr5A2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0506.3" name="Nrf1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1997.2" name="Olig2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0680.3" name="Pax7">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1615.2" name="Plagl1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0065.3" name="Pparg::Rxra">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1998.2" name="Prdm14">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1616.2" name="Prdm15">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1647.3" name="Prdm4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1999.2" name="Prdm5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1618.2" name="Ptf1A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1619.2" name="Ptf1A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1620.2" name="Ptf1A">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0859.2" name="Rarg">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1724.2" name="Rfx6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0629.2" name="Rhox11">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0002.3" name="Runx1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0720.2" name="Shox2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0631.2" name="Six3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2001.2" name="Six4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1153.2" name="Smad4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0869.3" name="Sox11">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0078.3" name="Sox17">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0514.3" name="Sox3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0087.3" name="Sox5">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0080.7" name="Spi1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1623.2" name="Stat2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0518.2" name="Stat4">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1624.2" name="Stat5a">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0519.2" name="Stat5a::Stat5b">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1625.2" name="Stat5b">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0520.2" name="Stat6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1567.3" name="Tbx6">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0521.3" name="Tcf12">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0832.2" name="Tcf21">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0633.3" name="Twist2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0693.4" name="Vdr">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1627.2" name="Wt1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0095.4" name="Yy1">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA2002.2" name="Zfp335">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0146.3" name="Zfx">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1628.2" name="Zic1::Zic2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA1629.2" name="Zic2">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0697.3" name="Zic3">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0619.2" name="LIN54">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+<pattern accession="MA0108.3" name="TBP">
+<scanned-sequence accession="gene_promoter_test_1" name="gene_promoter_test_1">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>
