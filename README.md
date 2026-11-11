@@ -1,29 +1,30 @@
-# Transcript Alignment & Evolutionary Distance Analysis Pipeline
+# Bioinformatics Project: Transcript Hierarchical Clustering & Similarity Analysis
 
-This repository contains a complete bioinformatics pipeline for processing transcripts, performing high-accuracy global alignment, calculating evolutionary distances, and generating analytical heatmaps.
+## 📌 Project Overview
+This repository contains the implementation and results of computational bioinformatics workflows designed to analyze transcript sequences. The primary objective is to compute distance matrices from aligned transcript sequences, convert them into normalized similarity matrices, and perform hierarchical clustering visualized through high-resolution heatmaps and dendrograms.
 
-## 🧬 Pipeline Workflow
+---
 
-1. **Subset Extraction:** Extracted 200 transcripts (`data/transcripts_200.fa`) from raw cDNA data using Biopython.
-2. **Global Alignment:** Performed rigorous global pairwise alignment with iterative refinement using MAFFT (`G-INS-i` strategy with `--globalpair --maxiterate 1000`).
-3. **Distance Matrix Calculation:** Computed numerical evolutionary distance values from the aligned sequences (`results/aligned.fa`) using EMBOSS `distmat` (`-nucmethod 1`).
-4. **Data Visualization:** Parsed the distance matrix and generated a high-resolution correlation heatmap using Python (Pandas, Seaborn, and Matplotlib).
+## 🛠️ Methodology & Workflow
 
-## 📊 Visualizations
+1. **Multiple Sequence Alignment (MSA):**
+   - Executed iterative multiple sequence alignments on nucleotide transcripts using command-line `MAFFT` configurations (global-pair settings).
 
-Here is the generated distance matrix heatmap representing the evolutionary distances among the transcripts:
+2. **Distance Matrix Generation:**
+   - Generated pairwise distance matrices using EMBOSS `distmat` (Lower Triangular format) to evaluate evolutionary or sequence divergence distances among transcripts.
 
-![Distance Heatmap](results/distance_heatmap.png)
+3. **Data Parsing & Normalization:**
+   - Built a robust Python parsing script (`plot_clustermap.py`) to clean and parse EMBOSS output, handling headers, comments, and missing values.
+   - Converted raw distance matrices into normalized similarity matrices ($Similarity = 1 - \frac{Dist - Min}{Max - Min}$) to scale scores between 0 and 1.
 
-## 🛠️ Requirements & Tools
-- Python 3 with Biopython, Pandas, Seaborn, Matplotlib
-- MAFFT (v7.526)
-- EMBOSS Suite (`distmat`)
+4. **Hierarchical Clustering & Visualization:**
+   - Applied Scipy's hierarchical clustering (`sch.linkage` with average linkage method) on condensed distance vectors.
+   - Generated refined sub-sample heatmaps using Seaborn (`clustermap`) combined with dendrograms to ensure optimal label legibility and cluster clarity.
 
-## Results & Heatmaps
+---
 
-### 1. Basic Sequence Similarity Heatmap
-![Basic Heatmap](results/similarity_heatmap.png)
+## 📊 Results & Outputs
+- **Distance Matrix:** Saved under `results/distances.txt`.
+- **Clustered Similarity Heatmap:** High-resolution visualization saved under `results/clustered_similarity_heatmap.png`, illustrating clear cluster groups and similarity scores for transcript sub-samples.
 
-### 2. Hierarchical Clustering Heatmap (Dendrograms)
-![Clustered Heatmap](results/clustered_similarity_heatmap.png)
+---
