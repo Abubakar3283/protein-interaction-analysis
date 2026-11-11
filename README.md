@@ -1,15 +1,14 @@
-kk# Bioinformatics Project: Transcript Hierarchical Clustering
+# Bioinformatics Project: Transcript Alignment & Similarity Heatmap
 
-## 📊 Clustered Similarity Heatmap
-![Clustered Similarity Heatmap](results/clustered_similarity_heatmap.png)
+## 📊 Heatmap & Clustering Visualization
+![Similarity Heatmap](results/heatmap.png)
 
 ## 🚀 Project Summary & Workflow
-This repository contains the computational pipeline for transcript sequence analysis:
-1. **Multiple Sequence Alignment:** Aligned transcripts using command-line **MAFFT** (global-pair settings).
-2. **Distance Matrix:** Computed pairwise distances using **EMBOSS distmat** (Lower Triangular format).
-3. **Data Parsing & Normalization:** Processed via custom Python scripts to handle formatting and convert raw distances into normalized similarity scores ($0 \text{ to } 1$).
-4. **Hierarchical Clustering:** Performed clustering using **Scipy** (`sch.linkage`) and visualized high-resolution heatmaps with **Seaborn** (`clustermap`).
+This repository documents the complete bioinformatics workflow for transcript sequence analysis:
+1. **BLAST Search:** Performed sequence alignment and similarity searches across transcript datasets.
+2. **Distance Matrix Calculation:** Generated pairwise distance matrices using **EMBOSS distmat** (Lower Triangular format).
+3. **Heatmap Generation:** Developed a custom Python script to parse the distance data and plot the high-resolution **Blue and Red similarity heatmap** with proper axis labels and hierarchical clustering.
 
-## 📁 Results
+## 📁 Results & Output Files
 - **Distance Matrix:** `results/distances.txt`
-- **Heatmap Visualization:** `results/clustered_similarity_heatmap.png`
+- **Similarity Heatmap Visualization:** `results/heatmap.png`
