@@ -19,3 +19,11 @@ Here is the generated distance matrix heatmap representing the evolutionary dist
 - Python 3 with Biopython, Pandas, Seaborn, Matplotlib
 - MAFFT (v7.526)
 - EMBOSS Suite (`distmat`)
+
+## Results & Heatmaps
+
+### 1. Basic Sequence Similarity Heatmap
+![Basic Heatmap](results/similarity_heatmap.png)
+
+### 2. Hierarchical Clustering Heatmap (Dendrograms)
+![Clustered Heatmap](results/clustered_similarity_heatmap.png)
