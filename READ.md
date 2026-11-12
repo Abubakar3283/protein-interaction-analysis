@@ -1,4 +1,4 @@
-k# Bioinformatics Project: Transcript Distance Matrix Heatmap
+#Transcript Distance Matrix Heatmap
 
 ## 📊 Heatmap Visualization (`results/distance_heatmap.png` / `similarity_heatmap.png`)
 ![Transcript Distance Matrix Heatmap](results/distance_heatmap.png)
