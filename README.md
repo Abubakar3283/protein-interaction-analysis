@@ -33,3 +33,24 @@ This repository documents the complete, step-by-step bioinformatics workflow for
 - **Distance Matrix:** `results/distances.txt`
 - **Standard Heatmap:** `results/heatmap.png`
 - **Clustered Heatmap:** `results/clustered_similarity_heatmap.png`
+
+
+---
+
+
+### Task: Sequence Similarity Matrix and Heatmap Generation
+
+In this task, we extended our evolutionary distance analysis by transforming the distance matrix into a normalized **Sequence Similarity Matrix** and visualizing it using a comprehensive heatmap.
+
+#### 1. Objective and Significance
+* **Why it was done:** While evolutionary distance matrices highlight divergence between transcripts, many downstream clustering and machine learning algorithms perform more effectively with **Similarity Scores** (ranging from $0.0$ to $1.0$, where $1.0$ represents identical transcripts). 
+* **Transformation Method:** The distance matrix values were normalized and converted using the formula:
+  $$\text{Similarity} = 1.0 - \left( \frac{\text{Distance}}{\text{Max\_Distance}} \right)$$
+
+#### 2. Implementation Scripts
+* **`convert_to_similarity.py`**: A Python script that reads `results/distances.txt`, filters out non-numeric headers using robust exception handling, normalizes the distances, and outputs a 2D sequence similarity matrix at `results/similarity_matrix.txt`.
+* **`plot_similarity_heatmap.py`**: A Python script that loads the generated similarity matrix and builds a high-resolution heatmap (`results/similarity_heatmap.png`) using the `seaborn` and `matplotlib` libraries with a `coolwarm` colormap.
+
+#### 3. Generated Results & Outputs
+* **`results/similarity_matrix.txt`**: Contains the full pairwise sequence similarity score matrix (normalized between 0 and 1).
+* **`results/similarity_heatmap.png`**: A 2D matrix heatmap representing the global sequence similarity distribution across all aligned transcripts, allowing clear visual inspection of highly conserved versus divergent transcript clusters.
