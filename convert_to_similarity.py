@@ -1,74 +1,43 @@
 import os
-import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
-import seaborn as sns
 
-# 1.
-file_path = "results/distances.txt"
+# Define file paths
+distances_file = "results/distances.txt"
+similarity_file = "results/similarity_matrix.txt"
 
-names = []
+print("Reading distance matrix...")
+
+# Read the distance matrix and skip non-numeric header lines
 matrix_data = []
+with open(distances_file, "r") as f:
+    for line in f:
+        parts = line.strip().split()
+        # Check if the line contains valid distance data (must have multiple elements and start with a number or valid row identifier)
+        if len(parts) > 1:
+            try:
+                # Try converting parts[1:] to float. If it fails (e.g. header line containing 'Matrix'), it skips.
+                distances = [float(val) for val in parts[1:]]
+                matrix_data.append(distances)
+            except ValueError:
+                # Skip header or text lines like 'Matrix'
+                continue
 
-with open(file_path, "r") as f:
-  for line in f:
-    line_stripped = line.strip()
-    if not line_stripped:
-      continue
-    parts = line_stripped.split()
-    if (
-        "Matrix" in line
-        or "distmat" in line
-        or line.startswith("#")
-        or len(parts) == 1
-    ):
-      continue
-    if len(parts) > 1:
-      name = parts[0]
-      try:
-        distances = [float(x) for x in parts[1:]]
-        names.append(name)
-        matrix_data.append(distances)
-      except ValueError:
-        continue
+dist_matrix = np.array(matrix_data)
 
-if matrix_data and names:
-  min_len = min(len(row) for row in matrix_data)
-  dist_df = pd.DataFrame(
-      [row[:min_len] for row in matrix_data], index=names[: len(matrix_data)]
-  )
-  dist_df = dist_df.astype(float)
+# Handle case where matrix might be empty
+if dist_matrix.size == 0:
+    raise ValueError("Error: No valid distance data found in distances.txt. Please check the file format.")
 
-  # 2. (Similarity)
-  #  Similarity = Max_Distance - Distance
-  max_val = dist_df.max().max()
-  if max_val == 0:
-    max_val = 1.0
+# Find the maximum distance to normalize values
+max_distance = np.max(dist_matrix)
+if max_distance == 0:
+    max_distance = 1.0  # Prevent division by zero
 
-  Similarity = 1 - (Distance / Max_Distance)
-  sim_df = 1.0 - (dist_df / max_val)
+# Convert distance matrix to similarity matrix: Similarity = 1 - (Distance / Max_Distance)
+sim_matrix = 1.0 - (dist_matrix / max_distance)
 
-  #
-  plt.figure(figsize=(12, 10))
-  sns. heatmap(
-      sim_df,
-      cmap="YlGnBu",
-      linewidths=0.5,
-      cbar_kws={"label": "Sequence Similarity Score (0 to 1)"},
-  )
+# Ensure the results directory exists and save the similarity matrix
+os.makedirs("results", exist_ok=True)
+np.savetxt(similarity_file, sim_matrix, fmt="%.4f")
 
-  plt.title(
-      "Transcript Similarity Matrix Heatmap", fontsize=14, fontweight="bold"
-  )
-  plt.xlabel("Transcripts", fontsize=12)
-  plt.ylabel("Transcripts", fontsize=12)
-
-  os.makedirs("results", exist_ok=True)
-  plt.savefig("results/similarity_heatmap.png", dpi=300, bbox_inches="tight")
-  print(
-      "✅ Similarity Matrix Heatmap successfully generated and saved as"
-      " 'results/similarity_heatmap.png'!"
-  )
-  plt.show()
-else:
-  print("❌ Error: Could not read distance matrix.")
+print(f"Similarity matrix successfully generated and saved at: {similarity_file}")
