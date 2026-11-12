@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-# 1. پرانی ڈسٹنس فائل کو پڑھنا
+# 1.
 file_path = "results/distances.txt"
 
 names = []
@@ -39,22 +39,20 @@ if matrix_data and names:
   )
   dist_df = dist_df.astype(float)
 
-  # 2. ڈسٹنس کو سمیرٹی (Similarity) میں تبدیل کرنا
-  # طریقہ: Similarity = Max_Distance - Distance (یا نارملائزیشن)
-  # تاکہ کم فاصلہ زیادہ سمیرٹی بن جائے اور زیادہ فاصلہ کم سمیرٹی بن جائے۔
+  # 2. (Similarity)
+  #  Similarity = Max_Distance - Distance
   max_val = dist_df.max().max()
   if max_val == 0:
-    max_val = 1.0  # زیرو ڈویژن سے بچنے کے لیے
+    max_val = 1.0
 
-  # یہاں ہم فارمولا استعمال کر رہے ہیں: Similarity = 1 - (Distance / Max_Distance)
-  # یا اس کو 0 سے 1 کے اسکیل پر لے آتے ہیں
+  Similarity = 1 - (Distance / Max_Distance)
   sim_df = 1.0 - (dist_df / max_val)
 
-  # 3. نیا سمیرٹی ہیٹ میپ بنانا
+  #
   plt.figure(figsize=(12, 10))
-  sns.heatmap(
+  sns. heatmap(
       sim_df,
-      cmap="YlGnBu",  # سمیرٹی کے لیے پیلا، ہلا اور نیلا رنگ (خوبصورت کمبینیشن)
+      cmap="YlGnBu",
       linewidths=0.5,
       cbar_kws={"label": "Sequence Similarity Score (0 to 1)"},
   )
