@@ -30,6 +30,15 @@ This comprehensive documentation covers the complete computational pipeline for 
      - **Molecular Function (MF):** Catalytic and binding activities at the molecular level (e.g., Binding, Catalytic Activity).
      - **Cellular Component (CC):** Subcellular locations and anatomical entities (e.g., Intracellular, Membrane).
 
+### 📋 GO Slim Extracted Sample Data (Top Transcripts)
+| Transcript ID | Gene Symbol | Biological Process | Molecular Function | Cellular Component |
+| :--- | :--- | :--- | :--- | :--- |
+| `ENSMUST00000194081.2` | `Gm38212` | Metabolic Process | Binding | Intracellular |
+| `ENSMUST00000194393.2` | `Gm7449` | Cellular Process | Catalytic Activity | Membrane |
+| `ENSMUST00000185509.2` | `Gm28283` | Biological Regulation | Structural Molecule Activity | Organelle |
+| `ENSMUST00000194605.2` | `Gm37108` | Response to Stimulus | Transporter Activity | Cellular Anatomical Entity |
+| `ENSMUST00000191703.2` | `Gm37275` | Localization | Transcription Regulator | Protein-containing Complex |
+
 ---
 
 ## 📁 Key Script Files & Output Reports
