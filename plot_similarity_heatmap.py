@@ -9,24 +9,23 @@ output_image = "results/similarity_heatmap.png"
 
 print("Reading similarity matrix...")
 
-# Load similarity matrix
 try:
-    sim_matrix = np.loadtxt(similarity_file)
+    sim_matrix = np.loadtxt(similarity_file, delimiter="\t")
 except Exception as e:
-    raise RuntimeError(f"Error loading similarity matrix: {e}")
+    sim_matrix = np.loadtxt(similarity_file)
 
 # Set up the matplotlib figure
 plt.figure(figsize=(12, 10), dpi=300)
 
-# Create heatmap using Seaborn (Coolwarm colormap representing similarity)
+# Create heatmap using Seaborn (Coolwarm colormap representing similarity score from 0 to 1)
 sns.heatmap(
     sim_matrix,
     cmap="coolwarm",
     vmin=0.0,
     vmax=1.0,
-    cbar_kws={"label": "Similarity Score"},
+    cbar_kws={"label": "Sequence Similarity Score (0 to 1)"},
     xticklabels=20,
-    yticklabels=50,
+    yticklabels=20,
 )
 
 # Add title and axis labels
