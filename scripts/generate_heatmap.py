@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
-# مسیر اور فائل کی سیٹنگ
 distances_file = "../results/distances.txt"
 output_image = "../results/similarity_heatmap.png"
 
