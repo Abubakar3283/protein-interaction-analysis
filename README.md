@@ -1,50 +1,61 @@
-# Transcript Evolutionary Distance, Similarity, & GO Slim Functional Analysis
+# Transcript Evolutionary Distance, Similarity & GO Slim Functional Analysis
 
-## 📊 Visualizations (`results/distance_heatmap.png`, `results/similarity_heatmap.png`)
+## 🧬 Project Overview
+- **Organism:** Mus musculus (Mouse)
+- **Dataset:** 200 transcripts (`data/transcripts_200.fa`)
+- **Analysis:** MSA → Distance Matrix → Similarity Matrix → GO Slim Annotation
+
+---
+
+## 📊 Task 1 — Multiple Sequence Alignment & Distance Analysis
+
+### Tools Used:
+- **MAFFT** (G-INS-i strategy): `--globalpair --maxiterate 1000`
+- **EMBOSS distmat** (Jukes-Cantor correction method)
+
+### Results:
+| Parameter | Value |
+|---|---|
+| Total Transcripts | 200 |
+| Alignment Length | 23,150 bp |
+| Matrix Shape | 200 × 200 |
+| Max Distance | 477.87 |
+| Min Distance | 0.03 |
+| Mean Distance | 165.46 |
+| Mean Similarity | 0.296 (29.6%) |
+
+---
+
+## 📈 Visualizations
 
 ### 1. Distance Matrix Heatmap
-![Transcript Distance Matrix Heatmap](results/distance_heatmap.png)
+![Distance Heatmap](results/distance_heatmap_FIXED.png)
 
 ### 2. Similarity Matrix Heatmap
-![Transcript Similarity Matrix Heatmap](results/similarity_heatmap.png)
+![Similarity Heatmap](results/similarity_heatmap_FIXED.png)
+
+### 3. Clustered Similarity Heatmap
+![Clustered Heatmap](results/clustered_similarity_heatmap_FIXED.png)
 
 ---
 
-## 🚀 Project Workflow & Summary
-This comprehensive documentation covers the complete computational pipeline for transcript sequence analysis, evolutionary distance evaluation, normalized similarity transformation, and functional GO Slim classification:
-
-1. **Dataset Overview:** 
-   - Analyzed **200 transcripts** (`data/transcripts_200.fa`) to evaluate sequence divergence, evolutionary relationships, and functional attributes.
-
-2. **Multiple Sequence Alignment (MSA) & Distance Matrix:** 
-   - Aligned sequences using command-line **MAFFT** (`--globalpair --maxiterate 1000`) adopting the G-INS-i strategy.
-   - Calculated pairwise evolutionary distances using **EMBOSS distmat** (`results/distances.txt`).
-
-3. **Similarity Matrix Transformation:** 
-   - Converted the distance matrix into a normalized **Sequence Similarity Matrix** (ranging from $0.0$ to $1.0$) via `convert_to_similarity.py` (`results/similarity_matrix.txt`).
-
-4. **GO Slim Functional Extraction (3 Core Components):** 
-   - Extracted transcript identifiers, gene symbols, and functional descriptions (`results/goslim_summary.tsv`).
-   - Mapped and categorized transcripts across the **three primary Gene Ontology (GO) Slim components** via `run_goslim_extraction.py` (`results/goslim_extracted_report.tsv`):
-     - **Biological Process (BP):** Broad cellular and physiological objectives (e.g., Metabolic Process, Cellular Process).
-     - **Molecular Function (MF):** Catalytic and binding activities at the molecular level (e.g., Binding, Catalytic Activity).
-     - **Cellular Component (CC):** Subcellular locations and anatomical entities (e.g., Intracellular, Membrane).
-
-### 📋 GO Slim Extracted Sample Data (Top Transcripts)
-| Transcript ID | Gene Symbol | Biological Process | Molecular Function | Cellular Component |
-| :--- | :--- | :--- | :--- | :--- |
-| `ENSMUST00000194081.2` | `Gm38212` | Metabolic Process | Binding | Intracellular |
-| `ENSMUST00000194393.2` | `Gm7449` | Cellular Process | Catalytic Activity | Membrane |
-| `ENSMUST00000185509.2` | `Gm28283` | Biological Regulation | Structural Molecule Activity | Organelle |
-| `ENSMUST00000194605.2` | `Gm37108` | Response to Stimulus | Transporter Activity | Cellular Anatomical Entity |
-| `ENSMUST00000191703.2` | `Gm37275` | Localization | Transcription Regulator | Protein-containing Complex |
+## 📁 Key Files
+| File | Description |
+|---|---|
+| `data/transcripts_200.fa` | 200 mouse transcripts (input) |
+| `results/aligned.fa` | MAFFT aligned sequences |
+| `results/distances.txt` | Pairwise evolutionary distances |
+| `results/similarity_matrix_FIXED.txt` | Normalized similarity (0 to 1) |
+| `results/distance_heatmap_FIXED.png` | Distance visualization |
+| `results/similarity_heatmap_FIXED.png` | Similarity visualization |
+| `results/clustered_similarity_heatmap_FIXED.png` | Clustered visualization |
+| `results/goslim_extracted_report.tsv` | GO Slim functional annotation |
+| `fix_heatmap.py` | Script to generate heatmaps |
 
 ---
 
-## 📁 Key Script Files & Output Reports
-- **Distance & Similarity Scripts:** `convert_to_similarity.py`, `plot_similarity_heatmap.py`
-- **GO Slim Extraction Scripts:** `extract_goslim_info.py`, `run_goslim_extraction.py`
-- **Aligned Sequences:** `results/aligned.fa`
-- **Distance & Similarity Matrices:** `results/distances.txt`, `results/similarity_matrix.txt`
-- **GO Slim Reports:** `results/goslim_summary.tsv`, `results/goslim_extracted_report.tsv`
-- **Visualizations:** `results/distance_heatmap.png`, `results/similarity_heatmap.png`
+## 🛠️ Scripts
+- `fix_heatmap.py` — Reads distances.txt, converts to similarity, generates all 3 heatmaps
+- `extract_goslim_info.py` — GO Slim extraction
+- `run_goslim_extraction.py` — GO Slim pipeline runner
+
