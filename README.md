@@ -1,17 +1,21 @@
-# Transcript Analysis Project
+# Transcript Evolutionary Distance, Similarity & GO Slim Analysis
 
 ## Project Overview
-- Organism: Mus musculus (Mouse)
-- Dataset: 200 transcripts
-- Pipeline: MSA → Distance → Similarity → GO Slim
+| Parameter | Details |
+|---|---|
+| Organism | Mus musculus (Mouse) |
+| Dataset | 200 transcripts |
+| Pipeline | MSA to Distance to Similarity to GO Slim |
 
 ---
 
 # Task 1 - MSA and Distance Matrix
 
 ## Tools Used
-- MAFFT: Multiple Sequence Alignment
-- EMBOSS distmat: Jukes-Cantor correction
+| Tool | Purpose |
+|---|---|
+| MAFFT | Multiple Sequence Alignment (G-INS-i) |
+| EMBOSS distmat | Evolutionary Distance (Jukes-Cantor) |
 
 ## Results
 | Parameter | Value |
@@ -72,27 +76,76 @@
 
 ---
 
-# Task 3 - GO Slim Annotation
-Coming soon...
+# Task 3 - GO Slim Functional Annotation
+
+## Annotation Sources
+| Source | File | Version |
+|---|---|---|
+| Mouse GO Annotations | mgi.gaf.gz | May 2026 |
+| GO Slim Terms | goslim_generic.obo | July 2026 |
+| GO Slim Tool | goatools v1.6.9 | Python library |
+
+## Key Results
+| Metric | Value |
+|---|---|
+| Total Transcripts | 200 |
+| Successfully Mapped | 87 (43.5%) |
+| Unmapped | 96 (48.0%) |
+| No GO Slim Terms | 17 (8.5%) |
+| GO Slim Terms Loaded | 206 |
+| Detail Records | 218 |
+
+## Annotation Coverage per Aspect
+| Aspect | Question | Transcripts Annotated | Top Term |
+|---|---|---|---|
+| Biological Process (BP) | What biological goal? | 32 | cell adhesion |
+| Molecular Function (MF) | What molecular activity? | 33 | catalytic activity |
+| Cellular Component (CC) | Where in the cell? | 85 | nucleus |
+
+## Why Some Are Unmapped?
+Most unmapped transcripts are Gm genes (predicted gene models).
+These are computationally predicted genes not yet fully characterized.
+They lack GO annotations in current databases.
+All transcripts including unmapped are retained in output as required.
+
+## Output Files
+| File | Contents |
+|---|---|
+| results/transcript_go_slim.tsv | Main output: transcript ID, gene ID, MF, BP, CC terms, mapping status |
+| results/transcript_go_detail.tsv | Detailed table with evidence codes |
+
+## Visualizations
+
+### 7. Mapping Status
+![Mapping](results/go_mapping_status.png)
+
+### 8. Top GO Slim Terms
+![Terms](results/go_top_terms.png)
+
+### 9. Aspect Coverage
+![Coverage](results/go_aspect_coverage.png)
 
 ---
 
 # Key Files
 | File | Description |
 |---|---|
-| data/transcripts_200.fa | 200 mouse transcripts |
+| data/transcripts_200.fa | 200 mouse transcripts (input) |
 | results/aligned.fa | MAFFT aligned sequences |
 | results/distances.txt | Pairwise distances |
-| results/similarity_matrix_FIXED.txt | Similarity scores |
-| results/distance_heatmap_FIXED.png | Task 1 distance heatmap |
-| results/similarity_heatmap_FIXED.png | Task 1 similarity heatmap |
-| results/clustered_similarity_heatmap_FIXED.png | Task 1 clustered |
-| results/top20_similar_pairs.png | Task 2 top 20 pairs |
-| results/similarity_distribution.png | Task 2 distribution |
-| results/similarity_perfect_pairs.png | Task 2 perfect pairs |
-| results/goslim_extracted_report.tsv | Task 3 GO Slim |
+| results/similarity_matrix_FIXED.txt | Similarity scores 0 to 1 |
+| results/transcript_go_slim.tsv | GO Slim annotation output |
+| results/transcript_go_detail.tsv | GO annotation with evidence codes |
+| data/go_annotations/mgi.gaf.gz | Mouse GO annotation source |
+| data/go_annotations/goslim_generic.obo | GO Slim terms file |
 
----
+# Scripts
+| Script | Purpose |
+|---|---|
+| fix_heatmap.py | Task 1 and 2: Parse distances, generate heatmaps |
+| task2_analysis.py | Task 2: Find maximum similar pairs |
+| go_slim_mapping.py | Task 3: GO Slim annotation pipeline |
+| task3_graphs.py | Task 3: Generate GO Slim graphs |
 
 # Biological Conclusions
 
@@ -102,10 +155,13 @@ Coming soon...
 - Sequences form distinct evolutionary clusters
 
 ## Task 2
-- 7 perfect pairs found (isoforms or duplicates)
+- 7 perfect pairs found (likely isoforms or duplicates)
 - 56% of pairs show low similarity
-- 8.7% show high similarity
 - Most transcripts from different gene families
 
 ## Task 3
-- GO Slim annotation coming soon
+- 87 transcripts successfully annotated (43.5%)
+- Most proteins located in nucleus (CC)
+- Most common function is catalytic activity (MF)
+- Most common process is cell adhesion (BP)
+- 96 unmapped = predicted Gm genes not yet in GO database
