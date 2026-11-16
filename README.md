@@ -1,6 +1,6 @@
 # Transcript Evolutionary Distance, Similarity & GO Slim Analysis
 
-## Project Overview
+## Overview
 | Parameter | Details |
 |---|---|
 | Organism | Mus musculus (Mouse) |
@@ -9,7 +9,7 @@
 
 ---
 
-# Task 1 - MSA and Distance Matrix
+# 1 Run MAFFT on the transcripts (summary) - MSA and Distance Matrix
 
 ## Tools Used
 | Tool | Purpose |
@@ -40,7 +40,7 @@
 
 ---
 
-# Task 2 - Maximum Similarity Analysis
+# 2 Take the maximum similarity and reconstruct the similarity matrix - Maximum Similarity Analysis
 
 ## Key Results
 | Metric | Value |
@@ -76,7 +76,7 @@
 
 ---
 
-# Task 3 - GO Slim Functional Annotation
+# 3 Extract GOSlim for each Transcript - GO Slim Functional Annotation
 
 ## Annotation Sources
 | Source | File | Version |
@@ -149,17 +149,17 @@ All transcripts including unmapped are retained in output as required.
 
 # Biological Conclusions
 
-## Task 1
+## 1 Run MAFFT on the transcripts (summary)
 - 200 transcripts aligned to 23,150 bp
 - Mean similarity = 28.6%
 - Sequences form distinct evolutionary clusters
 
-## Task 2
+## 2 Take the maximum similarity and reconstruct similarity matrix
 - 7 perfect pairs found (likely isoforms or duplicates)
 - 56% of pairs show low similarity
 - Most transcripts from different gene families
 
-## Task 3
+## 3 Extract GOSlim for each Transcript
 - 87 transcripts successfully annotated (43.5%)
 - Most proteins located in nucleus (CC)
 - Most common function is catalytic activity (MF)
