@@ -1,0 +1,201 @@
+Transcript_ID	Gene_ID	Gene_Symbol	BP_GO_IDs	BP_Terms	MF_GO_IDs	MF_Terms	CC_GO_IDs	CC_Terms	Mapping_Status
+ENSMUST00000194081.2	ENSMUSG00000104478.2	Gm38212	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000194393.2	ENSMUSG00000104385.2	Gm7449	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000185509.2	ENSMUSG00000101231.2	Gm28283	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000194605.2	ENSMUSG00000102135.2	Gm37108	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000191703.2	ENSMUSG00000103282.2	Gm37275	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000191467.2	ENSMUSG00000101097.2	Gm6679	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000186289.2	ENSMUSG00000100764.2	Gm29155	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000185910.2	ENSMUSG00000100764.2	Gm29155	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000193423.2	ENSMUSG00000102534.2	Gm37225	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000188261.2	ENSMUSG00000100831.2	Gm17847	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000185658.2	ENSMUSG00000100884.2	Gm28281	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000188753.2	ENSMUSG00000100635.2	Gm29157	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000191883.2	ENSMUSG00000102213.2	Gm37489	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000187764.2	ENSMUSG00000100480.2	Gm29156	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000158412.3	ENSMUSG00000089037.3	Gm22159	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005730(IEA)	nucleolus	Mapped
+ENSMUST00000195648.2	ENSMUSG00000103629.2	Gm5694	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00020182710.1	ENSMUSG00002076531.1	Gm54681	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000190856.2	ENSMUSG00000100025.2	Gm8141	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000061280.17	ENSMUSG00000051285.18	Pcmtd1	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000182114.8	ENSMUSG00000051285.18	Pcmtd1	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000182306.2	ENSMUSG00000051285.18	Pcmtd1	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000182823.2	ENSMUSG00000051285.18	Pcmtd1	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000182675.8	ENSMUSG00000051285.18	Pcmtd1	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000182388.8	ENSMUSG00000051285.18	Pcmtd1	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000182892.8	ENSMUSG00000051285.18	Pcmtd1	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000183204.2	ENSMUSG00000051285.18	Pcmtd1	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000182051.2	ENSMUSG00000098201.2	Gm26983	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000194854.2	ENSMUSG00000103509.2	Gm38372	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000029124.8	ENSMUSG00000048538.8	Gm9826	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000195269.2	ENSMUSG00000103709.2	Nras-ps2	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000104056.3	ENSMUSG00000077244.3	Gm23274	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005730(IEA)	nucleolus	Mapped
+ENSMUST00000192649.2	ENSMUSG00000102768.2	Gm19002	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000181554.2	ENSMUSG00000097797.7	Gm26901	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000193106.6	ENSMUSG00000097797.7	Gm26901	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000193732.2	ENSMUSG00000097797.7	Gm26901	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000193428.2	ENSMUSG00000097797.7	Gm26901	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000193998.2	ENSMUSG00000103498.2	Gm18984	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000194886.2	ENSMUSG00000103067.2	Gm30414	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000195081.2	ENSMUSG00000102320.2	Gm37791	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000194219.2	ENSMUSG00000104226.2	Gm7470	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000194305.2	ENSMUSG00000103903.2	Rps2-ps2	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000194872.2	ENSMUSG00000103557.2	Gm38216	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000137092.8	ENSMUSG00000026312.18	Cdh7	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000112701.8	ENSMUSG00000026312.18	Cdh7	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000129923.2	ENSMUSG00000026312.18	Cdh7	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000145188.2	ENSMUSG00000026312.18	Cdh7	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000131464.8	ENSMUSG00000026312.18	Cdh7	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000146282.3	ENSMUSG00000026312.18	Cdh7	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000134301.2	ENSMUSG00000026312.18	Cdh7	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000027542.13	ENSMUSG00000026312.18	Cdh7	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000172005.8	ENSMUSG00000026312.18	Cdh7	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000187425.2	ENSMUSG00000100290.2	Gm18552	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000189337.2	ENSMUSG00000100758.2	Gm3332	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000189583.2	ENSMUSG00000099926.2	Gm6693	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000039725.12	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000195196.6	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000194306.6	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000193822.6	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000193858.2	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000191680.2	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000194636.2	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000193610.2	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000194816.2	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000192378.2	ENSMUSG00000039748.12	Exo1	GO:0006310(ISS)	DNA recombination	GO:0003677(IEA)|GO:0003824(IEA)	DNA binding|catalytic activity	GO:0005634(ISO)|GO:0005654(IEA)|GO:0005886(ISO)	nucleus|nucleoplasm|plasma membrane	Mapped
+ENSMUST00000180129.3	ENSMUSG00000118715.1	Gm23805	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000201297.2	ENSMUSG00000104158.3	Becn2	GO:0006914(IMP)	autophagy	Unmapped	Unmapped	Unmapped	Unmapped	Mapped
+ENSMUST00000194391.2	ENSMUSG00000104158.3	Becn2	GO:0006914(IMP)	autophagy	Unmapped	Unmapped	Unmapped	Unmapped	Mapped
+ENSMUST00000193745.2	ENSMUSG00000103540.2	Gm37668	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000126008.8	ENSMUSG00000057363.13	Uxs1	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005794(IEA)|GO:0005739(HDA)	Golgi apparatus|mitochondrion	Mapped
+ENSMUST00000076997.13	ENSMUSG00000057363.13	Uxs1	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005794(IEA)|GO:0005739(HDA)	Golgi apparatus|mitochondrion	Mapped
+ENSMUST00000139451.8	ENSMUSG00000057363.13	Uxs1	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005794(IEA)|GO:0005739(HDA)	Golgi apparatus|mitochondrion	Mapped
+ENSMUST00000136179.8	ENSMUSG00000057363.13	Uxs1	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005794(IEA)|GO:0005739(HDA)	Golgi apparatus|mitochondrion	Mapped
+ENSMUST00000153317.6	ENSMUSG00000057363.13	Uxs1	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005794(IEA)|GO:0005739(HDA)	Golgi apparatus|mitochondrion	Mapped
+ENSMUST00000134860.8	ENSMUSG00000057363.13	Uxs1	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005794(IEA)|GO:0005739(HDA)	Golgi apparatus|mitochondrion	Mapped
+ENSMUST00000136704.2	ENSMUSG00000057363.13	Uxs1	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005794(IEA)|GO:0005739(HDA)	Golgi apparatus|mitochondrion	Mapped
+ENSMUST00000128261.2	ENSMUSG00000057363.13	Uxs1	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005794(IEA)|GO:0005739(HDA)	Golgi apparatus|mitochondrion	Mapped
+ENSMUST00000094626.5	ENSMUSG00000047216.9	Cdh19	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000187555.2	ENSMUSG00000047216.9	Cdh19	GO:0007155(IEA)	cell adhesion	Unmapped	Unmapped	GO:0005886(IEA)	plasma membrane	Mapped
+ENSMUST00000194910.2	ENSMUSG00000102788.2	Gm38255	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000192257.2	ENSMUSG00000102160.2	Gm36944	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000189363.2	ENSMUSG00000101253.2	Gm29088	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000185792.2	ENSMUSG00000101846.2	Gm19927	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000163003.2	ENSMUSG00000090243.2	Gm16103	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000191395.2	ENSMUSG00000100701.2	Gm19587	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000186797.2	ENSMUSG00000100555.2	Gm8173	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000189286.2	ENSMUSG00000101395.2	Gm8241	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000192902.2	ENSMUSG00000102728.2	Gm37934	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000158223.3	ENSMUSG00000088848.3	Gm26352	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005730(IEA)	nucleolus	Mapped
+ENSMUST00020182643.1	ENSMUSG00002075225.1	Gm54687	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000186365.2	ENSMUSG00000038702.7	Dsel	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000035462.7	ENSMUSG00000038702.7	Dsel	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000189731.2	ENSMUSG00000038702.7	Dsel	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000189370.2	ENSMUSG00000038702.7	Dsel	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000077111.5	ENSMUSG00000101875.2	Gm6028	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000185787.3	ENSMUSG00000099732.3	Gm17752	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000185549.2	ENSMUSG00000101220.2	Gm6717	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000190772.2	ENSMUSG00000100020.2	Gm19086	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000185872.2	ENSMUSG00000101054.2	Gm18406	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000158066.3	ENSMUSG00000088691.3	Gm22331	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005730(IEA)	nucleolus	Mapped
+ENSMUST00000185696.2	ENSMUSG00000099884.2	Gm8204	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000189766.2	ENSMUSG00000100304.2	Gm28190	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000190085.2	ENSMUSG00000101453.2	Gm28189	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000186856.2	ENSMUSG00000102105.2	Gm17946	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000190670.2	ENSMUSG00000099943.2	Gm18181	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00020181757.1	ENSMUSG00002075119.1	Gm54688	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000180837.2	ENSMUSG00000097648.2	9330185C12Rik	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000185902.2	ENSMUSG00000101687.2	Gm4854	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000186137.7	ENSMUSG00000100515.7	Gm17916	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000187634.2	ENSMUSG00000100515.7	Gm17916	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000189918.2	ENSMUSG00000100515.7	Gm17916	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000125404.8	ENSMUSG00000055214.16	Pld5	Unmapped	Unmapped	GO:0003824(IEA)	catalytic activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000065967.14	ENSMUSG00000055214.16	Pld5	Unmapped	Unmapped	GO:0003824(IEA)	catalytic activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000156184.2	ENSMUSG00000055214.16	Pld5	Unmapped	Unmapped	GO:0003824(IEA)	catalytic activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000144340.8	ENSMUSG00000055214.16	Pld5	Unmapped	Unmapped	GO:0003824(IEA)	catalytic activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000111166.2	ENSMUSG00000055214.16	Pld5	Unmapped	Unmapped	GO:0003824(IEA)	catalytic activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000111167.2	ENSMUSG00000055214.16	Pld5	Unmapped	Unmapped	GO:0003824(IEA)	catalytic activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000104983.2	ENSMUSG00000078184.2	Rbm8a2	Unmapped	Unmapped	GO:0003723(IEA)	RNA binding	GO:0005634(IEA)	nucleus	Mapped
+ENSMUST00000192680.2	ENSMUSG00000104363.2	Gm38081	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000192153.2	ENSMUSG00000103277.2	Gm37916	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000193484.2	ENSMUSG00000104157.2	Gm38101	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000193904.2	ENSMUSG00000102446.2	Gm17965	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000195389.2	ENSMUSG00000104248.2	Gm38152	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000194241.2	ENSMUSG00000104021.2	Gm36536	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000193453.2	ENSMUSG00000103471.2	Gm17966	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000157250.4	ENSMUSG00000087875.4	Gm26104	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000113577.8	ENSMUSG00000033007.16	Asic4	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005886(ISS)	plasma membrane	Mapped
+ENSMUST00000037708.10	ENSMUSG00000033007.16	Asic4	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005886(ISS)	plasma membrane	Mapped
+ENSMUST00000043725.9	ENSMUSG00000070695.5	Cntnap5a	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005886(IBA)	plasma membrane	Mapped
+ENSMUST00000132064.8	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000191683.6	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000140295.8	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000140302.8	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000115484.9	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000135046.4	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000144593.8	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000134075.8	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000194098.2	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000126083.2	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00000115488.3	ENSMUSG00000025909.17	Sntg1	Unmapped	Unmapped	GO:0005198(IEA)	structural molecule activity	GO:0005634(IEA)|GO:0005856(IEA)	nucleus|cytoskeleton	Mapped
+ENSMUST00020182976.1	ENSMUSG00002076179.1	Gm54703	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000185884.2	ENSMUSG00000102033.2	Gm28263	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000192338.2	ENSMUSG00000102647.2	Gm38024	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000140995.2	ENSMUSG00000086235.2	Gm16284	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000194602.2	ENSMUSG00000102253.2	Gm38259	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00020182074.1	ENSMUSG00002074990.1	Gm54704	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000179777.3	ENSMUSG00000094429.3	Gm19965	GO:0006355(IEA)	regulation of DNA-templated transcription	Unmapped	Unmapped	GO:0005634(IEA)	nucleus	Mapped
+ENSMUST00000193281.2	ENSMUSG00000103884.2	Gm37005	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000119877.2	ENSMUSG00000084353.2	Gm15452	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000191876.2	ENSMUSG00000103933.2	Gm36964	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00020182635.1	ENSMUSG00002075967.1	Gm54706	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000151704.2	ENSMUSG00000086195.2	Gm6152	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000192115.2	ENSMUSG00000104504.2	Gm7445	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000085919.3	ENSMUSG00000066693.3	Gm7493	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000193635.2	ENSMUSG00000102316.2	Gm37629	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000195333.2	ENSMUSG00000103819.2	Gm38008	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000195180.2	ENSMUSG00000102871.2	Gm37143	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000040649.7	ENSMUSG00000101571.3	Gm6187	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000192026.2	ENSMUSG00000104428.2	Gm18299	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000195217.2	ENSMUSG00000102272.2	Gm7512	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000083691.3	ENSMUSG00000065625.3	Gm24765	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00000192792.2	ENSMUSG00000103411.2	Gm18300	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000072079.9	ENSMUSG00000061024.9	Rrs1	GO:0042254(IEA)	ribosome biogenesis	Unmapped	Unmapped	GO:0005634(IEA)|GO:0005654(ISO)|GO:0005730(IEA)|GO:0005783(IDA)	nucleus|nucleoplasm|nucleolus|endoplasmic reticulum	Mapped
+ENSMUST00000186264.2	ENSMUSG00000102030.2	Gm29106	GO:0006355(IEA)	regulation of DNA-templated transcription	Unmapped	Unmapped	GO:0005634(IEA)	nucleus	Mapped
+ENSMUST00000144177.8	ENSMUSG00000025911.15	Adhfe1	Unmapped	Unmapped	GO:0016491(IEA)	oxidoreductase activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000027044.15	ENSMUSG00000025911.15	Adhfe1	Unmapped	Unmapped	GO:0016491(IEA)	oxidoreductase activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000130927.8	ENSMUSG00000025911.15	Adhfe1	Unmapped	Unmapped	GO:0016491(IEA)	oxidoreductase activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000186467.2	ENSMUSG00000025911.15	Adhfe1	Unmapped	Unmapped	GO:0016491(IEA)	oxidoreductase activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000190654.2	ENSMUSG00000025911.15	Adhfe1	Unmapped	Unmapped	GO:0016491(IEA)	oxidoreductase activity	GO:0005739(IEA)	mitochondrion	Mapped
+ENSMUST00000121942.2	ENSMUSG00000081441.4	Gm6161	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000088666.4	ENSMUSG00000067879.4	Vxn	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005634(IEA)|GO:0005886(IEA)	nucleus|plasma membrane	Mapped
+ENSMUST00000191209.2	ENSMUSG00000099827.2	Gm29520	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000192664.6	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000195717.6	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000194727.6	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000194489.6	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000192927.6	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000195433.6	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000192991.2	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000194984.2	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000193765.2	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000193098.2	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000194371.2	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000192961.6	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000192643.2	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000194263.3	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000057037.13	ENSMUSG00000057335.12	Cep170	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005829(ISO)	cytosol	Mapped
+ENSMUST00000192113.2	ENSMUSG00000103634.2	3110062G12Rik	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000195121.2	ENSMUSG00000104154.2	Gm38104	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000195463.2	ENSMUSG00000103435.2	Gm36992	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000083639.3	ENSMUSG00000065573.3	Mir350	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	No_GO_Slim_Terms
+ENSMUST00020182596.1	ENSMUSG00002076271.1	Gm54718	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000187109.2	ENSMUSG00000100551.2	Gm19503	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000191460.2	ENSMUSG00000100357.2	Gm28181	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped	Unmapped
+ENSMUST00000088658.11	ENSMUSG00000025912.17	Mybl1	GO:0006355(IEA)|GO:0000278(IBA)	regulation of DNA-templated transcription|mitotic cell cycle	Unmapped	Unmapped	GO:0005634(IEA)|GO:0005654(ISO)	nucleus|nucleoplasm	Mapped
+ENSMUST00000115468.9	ENSMUSG00000025912.17	Mybl1	GO:0006355(IEA)|GO:0000278(IBA)	regulation of DNA-templated transcription|mitotic cell cycle	Unmapped	Unmapped	GO:0005634(IEA)|GO:0005654(ISO)	nucleus|nucleoplasm	Mapped
+ENSMUST00000160022.2	ENSMUSG00000025912.17	Mybl1	GO:0006355(IEA)|GO:0000278(IBA)	regulation of DNA-templated transcription|mitotic cell cycle	Unmapped	Unmapped	GO:0005634(IEA)|GO:0005654(ISO)	nucleus|nucleoplasm	Mapped
+ENSMUST00000160451.2	ENSMUSG00000025912.17	Mybl1	GO:0006355(IEA)|GO:0000278(IBA)	regulation of DNA-templated transcription|mitotic cell cycle	Unmapped	Unmapped	GO:0005634(IEA)|GO:0005654(ISO)	nucleus|nucleoplasm	Mapped
+ENSMUST00000188212.2	ENSMUSG00000025912.17	Mybl1	GO:0006355(IEA)|GO:0000278(IBA)	regulation of DNA-templated transcription|mitotic cell cycle	Unmapped	Unmapped	GO:0005634(IEA)|GO:0005654(ISO)	nucleus|nucleoplasm	Mapped
+ENSMUST00000057438.7	ENSMUSG00000045210.9	Vcpip1	Unmapped	Unmapped	Unmapped	Unmapped	GO:0005634(ISS)|GO:0005783(ISS)|GO:0005829(ISO)	nucleus|endoplasmic reticulum|cytosol	Mapped
+ENSMUST00000185579.7	ENSMUSG00000041763.15	Tpp2	GO:0030163(ISO)	protein catabolic process	Unmapped	Unmapped	GO:0005634(IEA)|GO:0005654(ISO)|GO:0005783(IEA)|GO:0005829(IEA)	nucleus|nucleoplasm|endoplasmic reticulum|cytosol	Mapped
