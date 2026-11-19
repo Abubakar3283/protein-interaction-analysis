@@ -1,6 +1,6 @@
 # Transcript Evolutionary Distance, Similarity & GO Slim Analysis
 
-## Overview
+## Project Overview
 | Parameter | Details |
 |---|---|
 | Organism | Mus musculus (Mouse) |
@@ -9,7 +9,7 @@
 
 ---
 
-# 1 Run MAFFT on the transcripts (summary) - MSA and Distance Matrix
+# Task 1 - MSA and Distance Matrix
 
 ## Tools Used
 | Tool | Purpose |
@@ -40,7 +40,7 @@
 
 ---
 
-# 2 Take the maximum similarity and reconstruct the similarity matrix - Maximum Similarity Analysis
+# Task 2 - Maximum Similarity Analysis
 
 ## Key Results
 | Metric | Value |
@@ -76,7 +76,7 @@
 
 ---
 
-# 3 Extract GOSlim for each Transcript - GO Slim Functional Annotation
+# Task 3 - GO Slim Functional Annotation
 
 ## Annotation Sources
 | Source | File | Version |
@@ -149,19 +149,88 @@ All transcripts including unmapped are retained in output as required.
 
 # Biological Conclusions
 
-## 1 Run MAFFT on the transcripts (summary)
+## Task 1
 - 200 transcripts aligned to 23,150 bp
 - Mean similarity = 28.6%
 - Sequences form distinct evolutionary clusters
 
-## 2 Take the maximum similarity and reconstruct similarity matrix
+## Task 2
 - 7 perfect pairs found (likely isoforms or duplicates)
 - 56% of pairs show low similarity
 - Most transcripts from different gene families
 
-## 3 Extract GOSlim for each Transcript
+## Task 3
 - 87 transcripts successfully annotated (43.5%)
 - Most proteins located in nucleus (CC)
 - Most common function is catalytic activity (MF)
 - Most common process is cell adhesion (BP)
 - 96 unmapped = predicted Gm genes not yet in GO database
+---
+
+# Task 4 - Enrichment Analysis on 5 Clusters
+
+## Goal
+Divide 200 transcripts into 5 clusters based on
+sequence similarity and find which GO Slim functions
+are enriched in each cluster.
+
+## Cluster Results
+| Cluster | Size | Mapped | Top BP | Top MF | Top CC |
+|---|---|---|---|---|---|
+| Cluster 1 | 89 | 36 | cell adhesion | catalytic activity | plasma membrane |
+| Cluster 2 | 46 | 16 | cell adhesion | structural molecule | nucleus |
+| Cluster 3 | 17 | 12 | transcription regulation | not found | cytosol |
+| Cluster 4 | 27 | 13 | transcription regulation | oxidoreductase | nucleus |
+| Cluster 5 | 21 | 10 | DNA recombination | structural molecule | cytosol |
+
+## Biological Meaning
+| Cluster | Biological Role |
+|---|---|
+| Cluster 1 | Surface proteins doing cell adhesion |
+| Cluster 2 | Nuclear structural proteins |
+| Cluster 3 | Gene regulators in cytosol |
+| Cluster 4 | Nuclear enzymes doing redox reactions |
+| Cluster 5 | DNA editors doing recombination |
+
+## Visualizations
+
+### 10. Cluster Sizes
+![Sizes](results/cluster_sizes.png)
+
+### 11. GO Coverage per Cluster
+![Coverage](results/cluster_go_coverage.png)
+
+### 12. Top Functions per Cluster
+![Functions](results/cluster_top_functions.png)
+
+---
+
+# Task 5 - GTEx Co-expression Analysis
+Coming soon...
+
+---
+
+# Biological Conclusions
+
+## Task 1
+- 200 transcripts aligned to 23,150 bp
+- Mean similarity = 28.6%
+- Sequences form distinct evolutionary clusters
+
+## Task 2
+- 7 perfect pairs found (isoforms or duplicates)
+- 56% of pairs show low similarity
+- Most transcripts from different gene families
+
+## Task 3
+- 87 transcripts successfully annotated (43.5%)
+- Most proteins located in nucleus
+- Most common function is catalytic activity
+- Most common process is cell adhesion
+
+## Task 4
+- 5 clusters identified from similarity matrix
+- Each cluster has distinct biological function
+- Confirms: similar sequences = similar function
+- Cluster 1 (biggest) = surface membrane proteins
+- Cluster 3 (best mapped) = gene regulators
