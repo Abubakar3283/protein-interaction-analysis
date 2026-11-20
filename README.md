@@ -194,8 +194,8 @@
 ### 15. Top Co-expressed Pairs
 ![Pairs](results/coexpression_top_pairs.png)
 
-### 16. Correlation Heatmap
-![Correlation](results/coexpression_heatmap.png)
+### 16. Correlation Heatmap (Clustered)
+![Correlation](results/coexpression_heatmap_FIXED.png)
 
 ---
 
