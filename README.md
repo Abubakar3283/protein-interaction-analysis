@@ -1,11 +1,11 @@
-# Transcript Evolutionary Distance, Similarity & GO Slim Analysis
+# Transcript Analysis Project
 
 ## Project Overview
 | Parameter | Details |
 |---|---|
 | Organism | Mus musculus (Mouse) |
 | Dataset | 200 transcripts |
-| Pipeline | MSA to Distance to Similarity to GO Slim |
+| Pipeline | MSA to Distance to Similarity to GO Slim to Enrichment to Co-expression |
 
 ---
 
@@ -93,26 +93,13 @@
 | Unmapped | 96 (48.0%) |
 | No GO Slim Terms | 17 (8.5%) |
 | GO Slim Terms Loaded | 206 |
-| Detail Records | 218 |
 
-## Annotation Coverage per Aspect
-| Aspect | Question | Transcripts Annotated | Top Term |
-|---|---|---|---|
-| Biological Process (BP) | What biological goal? | 32 | cell adhesion |
-| Molecular Function (MF) | What molecular activity? | 33 | catalytic activity |
-| Cellular Component (CC) | Where in the cell? | 85 | nucleus |
-
-## Why Some Are Unmapped?
-Most unmapped transcripts are Gm genes (predicted gene models).
-These are computationally predicted genes not yet fully characterized.
-They lack GO annotations in current databases.
-All transcripts including unmapped are retained in output as required.
-
-## Output Files
-| File | Contents |
-|---|---|
-| results/transcript_go_slim.tsv | Main output: transcript ID, gene ID, MF, BP, CC terms, mapping status |
-| results/transcript_go_detail.tsv | Detailed table with evidence codes |
+## Annotation Coverage
+| Aspect | Transcripts | Top Term |
+|---|---|---|
+| Biological Process (BP) | 32 | cell adhesion |
+| Molecular Function (MF) | 33 | catalytic activity |
+| Cellular Component (CC) | 85 | nucleus |
 
 ## Visualizations
 
@@ -127,52 +114,7 @@ All transcripts including unmapped are retained in output as required.
 
 ---
 
-# Key Files
-| File | Description |
-|---|---|
-| data/transcripts_200.fa | 200 mouse transcripts (input) |
-| results/aligned.fa | MAFFT aligned sequences |
-| results/distances.txt | Pairwise distances |
-| results/similarity_matrix_FIXED.txt | Similarity scores 0 to 1 |
-| results/transcript_go_slim.tsv | GO Slim annotation output |
-| results/transcript_go_detail.tsv | GO annotation with evidence codes |
-| data/go_annotations/mgi.gaf.gz | Mouse GO annotation source |
-| data/go_annotations/goslim_generic.obo | GO Slim terms file |
-
-# Scripts
-| Script | Purpose |
-|---|---|
-| fix_heatmap.py | Task 1 and 2: Parse distances, generate heatmaps |
-| task2_analysis.py | Task 2: Find maximum similar pairs |
-| go_slim_mapping.py | Task 3: GO Slim annotation pipeline |
-| task3_graphs.py | Task 3: Generate GO Slim graphs |
-
-# Biological Conclusions
-
-## Task 1
-- 200 transcripts aligned to 23,150 bp
-- Mean similarity = 28.6%
-- Sequences form distinct evolutionary clusters
-
-## Task 2
-- 7 perfect pairs found (likely isoforms or duplicates)
-- 56% of pairs show low similarity
-- Most transcripts from different gene families
-
-## Task 3
-- 87 transcripts successfully annotated (43.5%)
-- Most proteins located in nucleus (CC)
-- Most common function is catalytic activity (MF)
-- Most common process is cell adhesion (BP)
-- 96 unmapped = predicted Gm genes not yet in GO database
----
-
 # Task 4 - Enrichment Analysis on 5 Clusters
-
-## Goal
-Divide 200 transcripts into 5 clusters based on
-sequence similarity and find which GO Slim functions
-are enriched in each cluster.
 
 ## Cluster Results
 | Cluster | Size | Mapped | Top BP | Top MF | Top CC |
@@ -206,9 +148,78 @@ are enriched in each cluster.
 ---
 
 # Task 5 - GTEx Co-expression Analysis
-Coming soon...
+
+## Data Source
+| Parameter | Details |
+|---|---|
+| Database | GTEx v8 (Genotype Tissue Expression) |
+| Genes | 40 human genes (orthologs of mouse transcripts) |
+| Tissues | 54 human body tissues |
+| Correlation threshold | Pearson r >= 0.8 |
+| Variable gene threshold | CV > 0.5 |
+
+## Key Results
+| Metric | Value |
+|---|---|
+| Total genes | 40 |
+| Tissues analyzed | 54 |
+| Variable genes | 40 (all variable) |
+| Co-expressed pairs (r>=0.8) | 14 |
+| Strongest pair | MMP2 and MMP14 (r=0.9599) |
+
+## Top Co-expressed Pairs
+| Rank | Gene A | Gene B | Correlation | Biology |
+|---|---|---|---|---|
+| 1 | MMP2 | MMP14 | 0.9599 | Tissue remodeling enzymes |
+| 2 | COL3A1 | MMP14 | 0.9299 | Collagen and its enzyme |
+| 3 | COL1A1 | COL3A1 | 0.9286 | Collagen types together |
+| 4 | FN1 | THBS1 | 0.9031 | ECM adhesion proteins |
+| 5 | COL3A1 | MMP2 | 0.8764 | Tissue remodeling |
+
+## Co-expression Groups
+| Group | Genes | Function |
+|---|---|---|
+| ECM Structure | COL1A1 COL3A1 FN1 THBS1 | Building tissue |
+| Tissue Remodeling | MMP2 MMP14 COL3A1 | Breaking down tissue |
+| Cell Adhesion | PECAM1 SELP CDH13 ITGB1 | Cell attachment |
+
+## Visualizations
+
+### 13. Expression Heatmap
+![Expression](results/gtex_expression_heatmap.png)
+
+### 14. Co-expression Network
+![Network](results/coexpression_network.png)
+
+### 15. Top Co-expressed Pairs
+![Pairs](results/coexpression_top_pairs.png)
+
+### 16. Correlation Heatmap
+![Correlation](results/coexpression_heatmap.png)
 
 ---
+
+# Key Files
+| File | Description |
+|---|---|
+| data/transcripts_200.fa | 200 mouse transcripts |
+| results/aligned.fa | MAFFT aligned sequences |
+| results/distances.txt | Pairwise distances |
+| results/similarity_matrix_FIXED.txt | Similarity scores |
+| results/transcript_go_slim.tsv | GO Slim annotations |
+| results/cluster_assignments.tsv | 5 cluster assignments |
+| data/gtex/gtex_expression_matrix.tsv | GTEx expression data |
+| results/coexpressed_pairs.tsv | Co-expressed gene pairs |
+
+# Scripts
+| Script | Purpose |
+|---|---|
+| fix_heatmap.py | Task 1 and 2: Heatmap generation |
+| task2_analysis.py | Task 2: Similarity pair analysis |
+| go_slim_mapping.py | Task 3: GO Slim annotation |
+| task3_graphs.py | Task 3: GO Slim graphs |
+| task3_graphs.py | Task 4: Enrichment analysis |
+| go_slim_mapping.py | Task 5: GTEx co-expression |
 
 # Biological Conclusions
 
@@ -223,14 +234,19 @@ Coming soon...
 - Most transcripts from different gene families
 
 ## Task 3
-- 87 transcripts successfully annotated (43.5%)
-- Most proteins located in nucleus
-- Most common function is catalytic activity
-- Most common process is cell adhesion
+- 87 transcripts annotated (43.5%)
+- Top location: nucleus
+- Top function: catalytic activity
+- Top process: cell adhesion
 
 ## Task 4
-- 5 clusters identified from similarity matrix
-- Each cluster has distinct biological function
+- 5 clusters with distinct biological functions
 - Confirms: similar sequences = similar function
-- Cluster 1 (biggest) = surface membrane proteins
-- Cluster 3 (best mapped) = gene regulators
+- Cluster 1 = surface membrane proteins
+
+## Task 5
+- 14 co-expressed pairs found in human GTEx data
+- Strongest: MMP2 and MMP14 (r=0.9599)
+- 3 main groups: ECM structure, remodeling, adhesion
+- Human data confirms mouse cell adhesion findings
+- Mouse and human gene function is conserved!
